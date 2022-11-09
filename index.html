@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&family=Lora:ital@1&family=Poppins&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Yugen</title>
+</head>
+
+
+
+<body class="overflow-x-hidden bg-black transition duration-700">
+
+
+
+    <div class="fixed  left-0 right-0  bg-black md:bg-transparent  px-4 md:px-12   my-4 curvedFull w-full z-50 navbar"
+        id="navbar" onmouseover="showMenu.reverse()">
+        <div class=" flex justify-between items-center text-white py-2  z-50">
+            <div class="">
+                <a href="index.html">
+                    <img src="images/logo_white.png" class="h-16 md:h-18" id="yugen_white" alt="">
+                    <!-- <img src="images/logo.png" class="h-16 md:h-24 hidden" id="yugen_black" alt=""> -->
+                </a>
+
+            </div>
+
+
+
+            <div class=" text-white items-center justify-center md:flex" id="menu_items">
+                <div class="space-x-6 flex-wrap md:flex hidden">
+                    <a href="about.html" class="hover:text-white transition delay-45">
+                        <p>About us</p>
+                    </a>
+                    <a href="work.html" class="hover:text-white transition delay-45">
+                        <p>Our work</p>
+                    </a>
+                    <a href="events.html" class="hover:text-white transition delay-45">
+                        <p>Events and Blogs</p>
+                    </a>
+                    <a href="index.html#involved" class="hover:text-white transition delay-45">
+                        <p>Get involved</p>
+                    </a>
+                </div>
+                <button class="hamburger md:hidden" onclick="newMenu()"><svg id="menu"
+                        class="fill-current text-white h-8 md:h-10" clip-rule="evenodd" fill-rule="evenodd"
+                        stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m11 16.745c0-.414.336-.75.75-.75h9.5c.414 0 .75.336.75.75s-.336.75-.75.75h-9.5c-.414 0-.75-.336-.75-.75zm-9-5c0-.414.336-.75.75-.75h18.5c.414 0 .75.336.75.75s-.336.75-.75.75h-18.5c-.414 0-.75-.336-.75-.75zm4-5c0-.414.336-.75.75-.75h14.5c.414 0 .75.336.75.75s-.336.75-.75.75h-14.5c-.414 0-.75-.336-.75-.75z"
+                            fill-rule="nonzero" />
+                    </svg></button>
+                <button class="hamburger " onclick="newMenu()"><svg id="close"
+                        class="fill-current text-white h-8 md:h-12 hidden" clip-rule="evenodd" fill-rule="evenodd"
+                        stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z" />
+                    </svg></button>
+
+            </div>
+
+        </div>
+        <div class="space-x-6  text-white px-4 py-4 hidden" id="drawer">
+            <a href="about.html" class="hover:text-white transition delay-45">
+                <p>About us</p>
+            </a>
+            <a href="work.html" class="hover:text-white transition delay-45">
+                <p>Our work</p>
+            </a>
+            <a href="events.html" class="hover:text-white transition delay-45">
+                <p>Events and Blogs</p>
+            </a>
+            <a href="index.html#involved" class="hover:text-white transition delay-45">
+                <p>Get involved</p>
+            </a>
+        </div>
+    </div>
+    <section id="all">
+
+
+        <section class="md:flex items-center justify-center space-x-12 h-screen text-white py-32">
+            <div class=""><img src="images/landing.png" class="mx-auto heroImg" alt=""></div>
+            <div class="hidden md:block w-px bg-gray-700 h-72"></div>
+            <div class="">
+                <!-- <div class=" text-4xl about text-center ">Yugen</div> -->
+                <!-- <div class="h-px mt-4 w-12 mx-auto bg-white aboutLine"></div> -->
+                <div class="max-w-5xl mx-auto space-x-12 mt-8">
+                    <div class="caption text-gray-400 about text-2xl leading-loose transform  mx-auto">Creating
+                        <span class="text-white cursive"> equitable</span>,
+                        <span class=" text-white cursive">innovative</span> & <span
+                            class=" text-white cursive">life-long<br>
+                            learning</span> communities for
+                        <span class=" text-white cursive">teachers.</span>
+                    </div>
+                    <!-- <div class="flex items-center justify-center mt-12">
+                    <img src="images/hero1.png" class="h-24 icons" alt="">
+                    <img src="images/hero2.png" class="h-24 icons" alt="">
+                    <img src="images/hero3.png" class="h-24 icons" alt="">
+                    <img src="images/hero4.png" class="h-24 icons " alt="">
+                </div> -->
+                </div>
+
+            </div>
+
+
+
+
+        </section>
+
+        <!-- <section>
+        <div class="w-px h-screen bg-gradient-to-b from-purple-300 to-purple-700 mx-auto line1"></div>
+    </section> -->
+
+        <section class="flex items-center justify-center h-screen my-56 md:my-32 md:my-0 " id="about">
+            <div class="p-2 bg-purple-300 rounded-full absolute aboutCircle z-30"></div>
+            <div class="text-center text-purple-700 z-40">
+                <p class="text-3xl md:text-4xl aboutTitle secHeading">About<span class="cursive text-3xl md:text-4xl">
+                        Us</span></p>
+                <div class="h-1 w-32 mx-auto mt-4 bg-purple-700 aboutLine"></div>
+                <p class="max-w-2xl leading-loose md:leading-loose p-4 md:p-0  mt-6 mb-16">Yugen is an
+                    education-centered
+                    organization
+                    born
+                    from
+                    a lifetime of work, learning, and passion. Our goal is to create communities of life-long learning
+                    for
+                    both kids and adults affiliated with schools.</p>
+                <a href="about.html"
+                    class="border-2 border-purple-700 rounded-full py-4 md:py-6 px-16 md:px-24  transform transition delay-45  hover:bg-purple-700 hover:text-white">Know
+                    More</a>
+
+            </div>
+
+        </section>
+
+
+        <!-- <section>
+        <div class="w-px h-screen bg-gradient-to-b from-purple-300  to-purple-500 mx-auto line2"></div>
+    </section> -->
+
+
+        <section class="flex items-center justify-center h-screen my-56 md:my-32 md:my-0" id="work">
+            <div class="p-2 bg-yellow-200 rounded-full absolute workCircle z-30"></div>
+            <div class="text-center text-yellow-500 z-40">
+                <p class="text-3xl md:text-4xl workTitle secHeading">Our <span class="cursive">Work</span></p>
+                <div class="h-1 w-32 mx-auto mt-4 bg-yellow-500 workLine"></div>
+                <p class="max-w-2xl leading-loose md:leading-loose p-4 md:p-0  mt-6 mb-16">There are many
+                    layers
+                    to improving the
+                    quality of our
+                    schooling system. We believe that the whole is greater than the sum of its parts, and we work
+                    towards
+                    building a collection of small but meaningful solutions.</p>
+
+                <a href="work.html"
+                    class="border-2 border-yellow-500 rounded-full py-4 md:py-6 px-16 md:px-24  transform transition delay-45  hover:bg-yellow-500 hover:text-white">Know
+                    More</a>
+            </div>
+        </section>
+
+
+        <!-- <section>
+        <div class="w-px h-screen bg-gradient-to-b from-yellow-300  to-yellow-500 mx-auto line3"></div>
+    </section> -->
+
+        <section class="flex items-center justify-center h-screen my-56 md:my-32 md:my-0" id="events">
+            <div class="p-2 bg-pink-300 rounded-full absolute eventsCircle z-30"></div>
+            <div class="text-center text-pink-500 z-40">
+                <p class="text-3xl md:text-4xl eventsTitle secHeading">Events & <span class="cursive">Blogs</span></p>
+                <div class="h-1 w-32 mx-auto mt-4 bg-pink-500 eventsLine"></div>
+                <p class="max-w-2xl leading-loose md:leading-loose p-4 md:p-0  mt-6 mb-16">We are very happy
+                    to
+                    know your thoughts
+                    on our views
+                    and our activities.
+                </p>
+                <a href="events.html"
+                    class="border-2 border-pink-500 rounded-full py-4 md:py-6 px-16 md:px-24 text-lg transform transition delay-45  hover:bg-pink-500 hover:text-white">Know
+                    More</a>
+
+            </div>
+
+        </section>
+
+
+        <!-- <section>
+        <div class="w-px h-screen bg-gradient-to-b from-pink-300 to-pink-500 mx-auto line4"></div>
+    </section> -->
+
+
+        <section class="flex  items-center justify-center " id="involved">
+            <div class="p-2 bg-green-200 rounded-full absolute involvedCircle z-30"></div>
+            <div class="z-30 space-x-8">
+                <div class="flex items-center justify-center">
+
+
+                    <div class="text-center text-green-500 z-40 ">
+                        <img src="images/Flower Girl-01.png" class="h-36 mx-auto" alt="">
+                        <p class="text-3xl md:text-4xl involvedTitle secHeading" id="headerSlate">Get <span
+                                class="cursive">Involved</span>
+                        </p>
+                        <div class="h-1 w-32 mx-auto mt-4 bg-green-500 involvedLine"></div>
+
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-32 py-12 text-xl">
+
+                            <button onclick="playVid(1)">
+                                <div class="relative">
+
+                                    <p class="">
+                                        Volunteer
+                                    </p>
+
+
+
+                                    <img class="absolute -top-12 volCircle" src="images/circle.svg" alt="">
+
+                                </div>
+                            </button>
+
+
+
+                            <button onclick="playVid(2)">
+                                <div class="relative">
+
+                                    <p>
+                                        Buy us a book
+                                    </p>
+
+
+                                    <img class="absolute -top-12 bookCircle" src="images/circle.svg" alt="">
+                                </div>
+                            </button>
+
+                            <button onclick="playVid(3)">
+                                <div class="relative">
+
+                                    <p>
+                                        Donate
+                                    </p>
+
+
+                                    <img class="absolute -top-12 donateCircle" src="images/circle.svg" alt="">
+                                </div>
+                            </button>
+
+                            <button onclick="playVid(4)">
+                                <div class="relative">
+
+                                    <p>
+                                        Join us
+                                    </p>
+
+
+                                    <img class="absolute -top-12 joinCircle" src="images/circle.svg" alt="">
+                                </div>
+                            </button>
+                        </div>
+
+
+
+                    </div>
+                </div>
+                <div class="">
+                    <!-- ------------------------------JOIN US-------------------------------- -->
+                    <div
+                        class="p-4 z-30 shadow-xl flex items-center item4  justify-center bg-green-100 text-green-500 curvedFull py-12">
+                        <div class="px-4 md:px-12 py-24">
+                            <p class="text-center text-4xl">Join<span class="cursive"> Us</span></p>
+                            <div class="bg-green-500 h-px mt-4 mb-8 w-72 mx-auto line">
+                            </div>
+                            <div
+                                class="max-w-4xl my-4 about p-4 md:p-0  space-y-6 leading-normal transform text-center mx-auto">
+                                <p> We strongly
+                                    believe that a successful team is one that is built of people with interdisciplinary
+                                    skills
+                                    and perspectives. If you share our philosophy and passion for making quality
+                                    education
+                                    accessible, give us a shout!
+                                </p>
+                                <p>
+                                    Join our mailing list and stay in the loop about any job openings at Yugen. We’d
+                                    love to have
+                                    you on board :)
+                                </p>
+                            </div>
+                            <form class="flex items-center justify-center mt-12 space-x-4" id="joinUs">
+                                <input type="email" name="Email"
+                                    class="w-1/2  focus:outline-none border-2 border-green-500   bg-transparent text-green-500 text-center py-6 placeholder-green-500 px-4 rounded-full"
+                                    placeholder="Email Address">
+                                <input type="hidden" name="Message" value="I want to be a part of Yugen!">
+                                <button class="w-1/4 text-white py-6 px-4 rounded-full bg-green-500">
+                                    Sign up
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+                    <!-- -----------------------------------DONATE---------------------- -->
+                    <div
+                        class="z-30 shadow-xl  p-4 flex items-center item3  justify-center bg-green-100 text-green-500 curvedFull py-12">
+                        <div class="px-4 md:px-12 py-24">
+                            <p class="text-center  text-4xl "> <span class="cursive">Donate</span></p>
+                            <div class="bg-green-500 h-px mt-4 mb-8 w-72 mx-auto line">
+                            </div>
+                            <p class="max-w-4xl my-4 about p-4 md:p-0  leading-normal transform text-center mx-auto">
+                                We believe
+                                that the best way to transform the caliber of education in our schools is by
+                                providing
+                                educators with high quality resources. And one of the simplest & most effective ways
+                                to
+                                give
+                                back to your community is to support the ongoing efforts of those working at the
+                                ground
+                                level.
+                            </p>
+                            <p class="max-w-4xl my-4 about p-4 md:p-0  leading-normal transform text-center mx-auto">
+                                Every bit
+                                of support translates exponentially into access to quality education in our
+                                country’s schools. In spaces such as these, even a little bit goes a long way.
+                            </p>
+                            <div class="flex items-center justify-center">
+                                <button class="w-1/2 mx-auto text-white mt-4 py-6 px-4 rounded-full bg-green-500">
+                                    Donate
+                                </button>
+                            </div>
+                            <p class="text-center max-w-4xl mt-4">Your contributions are eligible for upto 50% tax
+                                benefit under
+                                section
+                                80g as smile foundation is registered as non profit organization. |
+                                <span class="font-bold uppercase">PAN:</span> AABCY0826A
+                                | <span class="font-bold uppercase">80G NUMBER:</span> AABCY0826AF2022001
+                            </p>
+
+                        </div>
+
+                    </div>
+                    <!-- ------------------------------------BOOK------------------------------- -->
+                    <div
+                        class="z-30  shadow-xl  p-4 flex items-center item2  justify-center bg-green-100 text-green-500 curvedFull py-12">
+                        <div class="px-4 md:px-12 py-24">
+                            <p class="text-center  text-4xl ">Buy us a <span class="cursive">book</span></p>
+                            <div class="bg-green-500 h-px mt-4 mb-8 w-72 mx-auto line">
+                            </div>
+                            <div
+                                class="max-w-4xl my-4 about p-4 md:p-0  space-y-6 leading-normal transform text-center mx-auto">
+                                <p> Lack of access to quality resources is one of the biggest obstacles our schools
+                                    face.
+                                    Imagine the kind of valuable change we could bring to classrooms if only our
+                                    schools
+                                    &
+                                    teachers had access to the latest research and tech!
+
+                                </p>
+                                <p>
+                                    This is a huge endeavour we are embarking on, and we would love every bit of
+                                    your
+                                    support. You can create big change through small contributions - the whole is
+                                    always
+                                    greater than the sum of its parts.
+
+                                </p>
+                                <p>Pay forward an act of kindness, buy a book through here and we will make sure it
+                                    reaches
+                                    the schools.</p>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <button class="w-1/2 mt-12 text-white py-6 px-4 rounded-full bg-green-500">
+                                    We're getting the list ready!
+                                </button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <!-- -----------------------------------VOLUNTEER------------------------ -->
+                    <div
+                        class="z-30  p-4 shadow-xl flex items-center item1  justify-center bg-green-100 text-green-500 curvedFull py-12">
+                        <div class="px-4 md:px-12 py-24">
+                            <p class="text-center text-4xl "><span class="cursive">Volunteer</span></p>
+                            <div class="bg-green-500 h-px mt-2 w-72 mx-auto line">
+                            </div>
+                            <div
+                                class="max-w-4xl my-4 about p-4 md:p-0  space-y-6 leading-normal transform text-center mx-auto">
+                                <p>Are you a passionate learner interested in exploring new aspects of your life?
+                                    Are
+                                    you
+                                    looking for ways to give back to the community in a meaningful way? You’re in
+                                    the
+                                    right
+                                    place!
+
+                                </p>
+                                <p>
+                                    We are always looking for volunteers to help us in a variety of areas! Your
+                                    skills
+                                    are
+                                    always an asset and we would like nothing more than to have you on board with
+                                    us.
+                                </p>
+                                <p>Reach out to us here and let’s get to this!</p>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <a href="https://forms.gle/BLqfWkzTWBnkoQx37" target="_blank"
+                                    class="w-1/2 mt-12 text-white text-center py-6 px-4 rounded-full bg-green-500">
+                                    Volunteer
+                                </a>
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="px-4 md:flex justify-between items-center  py-48 z-40">
+                    <div class="text-green-500 text-2xl text-center md:text-left">Subscribe to our <br><span
+                            class="font-bold text-3xl md:text-4xl">Newsletter!</span>
+                    </div>
+                    <form
+                        class="flex flex-wrap items-center justify-center space-y-2 md:space-y-0 md:space-x-4 mt-12 md:mt-0"
+                        action="" id="newsletter">
+                        <input type="text" name="Name"
+                            class="w-full md:w-72 focus:outline-none border-2 border-green-500   bg-transparent text-green-500 text-center py-6 placeholder-green-500 px-4 rounded-full"
+                            placeholder="Name"> <input type="email" name="Email"
+                            class="w-full md:w-72 focus:outline-none border-2 border-green-500   bg-transparent text-green-500 text-center py-6 placeholder-green-500 px-4 rounded-full"
+                            placeholder="Email Address">
+                        <input type="hidden" name="Message" value="I want sign up to your newsletter.">
+                        <button class="w-full md:w-32 text-white py-6 px-4 rounded-full bg-green-500">
+                            Sign up
+                        </button>
+                    </form>
+                </div>
+            </div>
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="mt-12 py-8 bg-gray-900 text-gray-500 px-4 md:px-8 mx-4 md:mx-6 my-6 curvedFull z-30">
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-12  pt-12">
+                <div class="">
+                    <div class="space-y-4">
+                        <a href="index.html"><img class="p-2 md:mx-auto h-16 md:h-24 rounded-full bg-white"
+                                src="images/logo.png" alt=""></a>
+                        <p class="md:text-center">&copy;2022 All rights reserved</p>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <p class="font-bold text-xl text-white">Explore</p>
+                    <p class="hover:text-white"><a href="about.html">About us</a></p>
+                    <p class="hover:text-white"><a href="work.html">Our work</a></p>
+                    <p class="hover:text-white"><a href="events.html">Events and blogs</a></p>
+                    <p class="hover:text-white"><a href="index.html#involved">Get involved</a></p>
+                </div>
+                <div class="space-y-2">
+                    <p class="font-bold text-xl text-white">Legal</p>
+                    <p class="hover:text-white"><a href="privacy.html" target="_blank">Privacy policy</a></p>
+                    <p class="hover:text-white"><a href="tandc.html" target="_blank">Terms and conditions</a></p>
+                    <p class="hover:text-white"><a href="refund.html" target="_blank">Refund policy</a></p>
+
+                </div>
+
+
+
+                <div class="space-y-12">
+                    <div class="space-y-2">
+                        <p class="font-bold text-xl text-white">Visit</p>
+                        <p class="leading-loose">Yugen Education Foundation<br>
+                            C-404, Meenakshi Mangalam,<br>
+                            2nd Main Bannerghatta Road, Begur
+                            Hobli,<br>
+                            Bengaluru,
+                            Karnataka - 560076
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+        </section>
+
+
+    </section>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+
+    <script>
+
+
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        var sec = 0
+
+
+
+
+        function changeLogo() {
+            switch (sec) {
+                case 1: document.getElementById("yugen_white").src = "images/yg_purple.png";
+                    break;
+                case 2: document.getElementById("yugen_white").src = "images/yg_yellow.png";
+                    break;
+                case 3: document.getElementById("yugen_white").src = "images/yg_pink.png";
+                    break;
+                case 4: document.getElementById("yugen_white").src = "images/yg_green.png";
+                    break;
+
+                default: document.getElementById("yugen_white").src = "images/logo.png";
+            }
+
+        }
+
+
+
+
+        let line1 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.line1',
+                toggleActions: 'play none none pause',
+                scrub: true,
+                start: 'top bottom'
+            }
+        }
+
+        )
+
+        line1.from('.line1', {
+            scale: 0,
+            onStart: () => showMenu.play(),
+            onReverseComplete: () => showMenu.reverse()
+
+        })
+
+
+
+        // -------------------------------------------------ABOUT----------------------------------------
+        let about = gsap.timeline({
+            scrollTrigger: {
+                trigger: '#about',
+                toggleActions: 'play none none pause',
+                scrub: 1,
+                start: 'top bottom'
+            }
+        }
+
+        )
+        if (!isMobile) {
+            about.to('.aboutCircle', { scale: 100 })
+                // .from('.aboutLine', { scale: -1 }, '-=0.5')
+                .to('.aboutCircle', { onStart: () => purple(), onReverseComplete: () => purple() })
+        } else {
+            about.to('.aboutCircle', { scale: 25 })
+                // .from('.aboutLine', { scale: -1 }, '-=0.5')
+                .to('.aboutCircle', { onStart: () => purple(), onReverseComplete: () => purple() })
+        }
+
+
+        function purple() {
+            sec = 1
+            changeLogo()
+            // document.getElementById('navbar').classList.toggle('bg-gray-900')
+            // document.getElementById('navbar').classList.toggle('bg-purple-700')
+            document.body.classList.toggle('bg-black')
+            document.body.classList.toggle('bg-purple-300')
+            document.getElementById('menu_items').classList.toggle('text-white')
+            document.getElementById('menu_items').classList.toggle('text-purple-600')
+            // document.getElementById('menu').classList.toggle('text-white')
+            // document.getElementById('menu').classList.toggle('text-purple-600')
+
+        }
+
+        let line2 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.line2',
+                toggleActions: 'play none none pause',
+                scrub: 1,
+                start: 'top bottom'
+            }
+        }
+
+        )
+
+        line2.from('.line2', {
+            scale: 0,
+
+
+        })
+
+        // ------------------------------------------------WORK--------------------------------------
+        let work = gsap.timeline({
+            scrollTrigger: {
+                trigger: '#work',
+                toggleActions: 'play none none pause',
+                scrub: 1,
+                start: 'top bottom'
+            }
+        }
+
+        )
+        if (!isMobile) {
+            work.to('.workCircle', { scale: 100 })
+                // .from('.workLine', { scale: -1 }, '-=0.5')
+                .to('.workCircle', { onStart: () => changeBG(), onReverseComplete: () => changeBG() })
+        } else {
+            work.to('.workCircle', { scale: 25 })
+                // .from('.workLine', { scale: -1 }, '-=0.5')
+                .to('.workCircle', { onStart: () => changeBG(), onReverseComplete: () => changeBG() })
+        }
+
+
+        function changeBG() {
+            sec = 2
+            changeLogo()
+            // document.getElementById('navbar').classList.toggle('bg-purple-700')
+            // document.getElementById('navbar').classList.toggle('bg-yellow-500')
+            document.body.classList.toggle('bg-purple-300')
+            document.body.classList.toggle('bg-yellow-200')
+            document.getElementById('menu_items').classList.toggle('text-purple-600')
+            document.getElementById('menu_items').classList.toggle('text-yellow-500')
+            // document.getElementById('menu').classList.toggle('text-purple-600')
+            // document.getElementById('menu').classList.toggle('text-yellow-500')
+
+        }
+
+
+        let line3 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.line3',
+                toggleActions: 'play none none pause',
+                scrub: 1,
+                start: 'top bottom'
+            }
+        }
+
+        )
+
+        line3.from('.line3', {
+            scale: 0,
+
+
+        })
+
+        // ----------------------------------------------EVENTS--------------------------------------
+
+        let events = gsap.timeline({
+            scrollTrigger: {
+                trigger: '#events',
+                toggleActions: 'play none none pause',
+                scrub: 1,
+                start: 'top bottom'
+            }
+        }
+
+        )
+        if (!isMobile) {
+            gsap.from('.heroImg', { opacity: 0, x: 30, })
+            gsap.from('.caption', { opacity: 0, x: -30, })
+
+
+            events.to('.eventsCircle', { scale: 100 })
+                // .from('.eventsLine', { scale: -1 }, '-=0.5')
+                .to('.eventsCircle', { onStart: () => pink(), onReverseComplete: () => pink() })
+        } else {
+            gsap.from('.heroImg', { opacity: 0, y: 30, })
+            gsap.from('.caption', { opacity: 0, y: -30, })
+
+
+            events.to('.eventsCircle', { scale: 25 })
+                // .from('.eventsLine', { scale: -1 }, '-=0.5')
+                .to('.eventsCircle', { onStart: () => pink(), onReverseComplete: () => pink() })
+        }
+
+
+        function pink() {
+            sec = 3
+            changeLogo()
+            // document.getElementById('navbar').classList.toggle('bg-yellow-500')
+            // document.getElementById('navbar').classList.toggle('bg-pink-500')
+            document.body.classList.toggle('bg-yellow-200')
+            document.body.classList.toggle('bg-pink-300')
+            document.getElementById('menu_items').classList.toggle('text-yellow-500')
+            document.getElementById('menu_items').classList.toggle('text-pink-600')
+            // document.getElementById('menu').classList.toggle('text-yellow-500')
+            // document.getElementById('menu').classList.toggle('text-pink-500')
+        }
+
+
+        let line4 = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.line4',
+                toggleActions: 'play none none pause',
+                scrub: 1,
+                start: 'top bottom'
+            }
+        }
+
+        )
+
+        line4.from('.line4', {
+            scale: 0,
+
+
+        })
+
+        // -------------------------------------------------INVOLVED--------------------------
+
+        let involved = gsap.timeline({
+            scrollTrigger: {
+                trigger: '#involved',
+                toggleActions: 'play none none pause',
+                scrub: 1,
+                start: 'top bottom'
+            }
+        }
+
+        )
+        if (!isMobile) {
+            involved.to('.involvedCircle', { scale: 100 })
+                // .from('.involvedLine', { scale: -1 }, '-=0.5')
+                .to('.eventsCircle', { onStart: () => green(), onReverseComplete: () => green() })
+        } else {
+            involved.to('.involvedCircle', { scale: 25 })
+                // .from('.involvedLine', { scale: -1 }, '-=0.5')
+                .to('.eventsCircle', { onStart: () => green(), onReverseComplete: () => green() })
+        }
+
+
+
+        function green() {
+            sec = 4
+            changeLogo()
+            // document.getElementById('navbar').classList.toggle('bg-pink-500')
+            // document.getElementById('navbar').classList.toggle('bg-green-500')
+            document.body.classList.toggle('bg-pink-300')
+            document.body.classList.toggle('bg-green-200')
+            document.getElementById('menu_items').classList.toggle('text-pink-600')
+            document.getElementById('menu_items').classList.toggle('text-green-500')
+            // document.getElementById('menu').classList.toggle('text-pink-500')
+            // document.getElementById('menu').classList.toggle('text-green-600')
+        }
+
+
+        // function switchContent(id) {
+
+        //     switch (id) {
+        //         case 1: document.getElementById('headerSlate').innerHTML = 'Volunteer';
+        //             document.getElementById('paraSlate').innerHTML = 'Volunteer Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut';
+        //             break;
+
+        //         case 2: document.getElementById('headerSlate').innerHTML = 'Buy us a <span class="cursive text-7xl">book</span>';
+        //             document.getElementById('paraSlate').innerHTML = 'Book Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut';
+        //             break;
+
+
+        //         case 3: document.getElementById('headerSlate').innerHTML = 'Donate';
+        //             document.getElementById('paraSlate').innerHTML = 'Donate Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut';
+        //             break;
+
+        //         case 4: document.getElementById('headerSlate').innerHTML = 'Join <span class="text-7xl cursive">Us</span>';
+        //             document.getElementById('paraSlate').innerHTML = 'Join us Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut';
+        //             break;
+        //     }
+        // }
+
+
+        let vol = gsap.timeline()
+        vol.from('.volCircle', { opacity: 0, scale: 1.2 })
+
+        let book = gsap.timeline().pause();
+        book.from('.bookCircle', { opacity: 0, scale: 1.2 })
+
+        let donate = gsap.timeline().pause()
+        donate.from('.donateCircle', { opacity: 0, scale: 1.2 })
+
+        let join = gsap.timeline().pause();
+        join.from('.joinCircle', { opacity: 0, scale: 1.2 })
+
+
+
+        function playVid(id) {
+            if (id == 1) {
+
+                item1.play()
+                item2.reverse()
+                item3.reverse()
+                item4.reverse()
+                item5.reverse()
+                join.reverse()
+                donate.reverse()
+                book.reverse()
+                vol.play()
+
+
+            }
+            if (id == 2) {
+
+                item2.play()
+                item1.reverse()
+                item3.reverse()
+                item4.reverse()
+                item5.reverse()
+                book.reverse()
+                join.reverse()
+                donate.reverse()
+                book.play()
+                vol.reverse()
+            }
+            if (id == 3) {
+
+                item3.play()
+                item2.reverse()
+                item1.reverse()
+                item4.reverse()
+                item5.reverse()
+                vol.reverse()
+                book.reverse()
+                join.reverse()
+                donate.play()
+            }
+            if (id == 4) {
+
+                item4.play()
+                item2.reverse()
+                item3.reverse()
+                item1.reverse()
+                item5.reverse()
+                book.reverse()
+                vol.reverse()
+                donate.reverse()
+                join.play()
+            }
+
+        }
+
+        // -----------------------------ITEM TIMELINES------------------------------------
+        let item1 = gsap.timeline()
+        item1.from('.item1', { rotate: -5, x: -200, opacity: 0, display: 'none', })
+
+        let item2 = gsap.timeline().pause()
+        item2.from('.item2', { rotate: -5, x: -200, opacity: 0, display: 'none' })
+
+        let item3 = gsap.timeline().pause()
+        item3.from('.item3', { rotate: -5, x: -200, opacity: 0, display: 'none' })
+
+        let item4 = gsap.timeline().pause()
+        item4.from('.item4', { rotate: -5, x: -200, opacity: 0, display: 'none' })
+
+        let item5 = gsap.timeline().pause()
+        item5.from('.item5', { rotate: -15, x: -200, opacity: 0, display: 'none' })
+
+        let goAway = gsap.timeline().pause();
+        goAway.to('.involvedButtonLeft', { x: -200, opacity: 0, stagger: 0.1 })
+        goAway.to('.involvedButtonRight', { x: 200, opacity: 0, stagger: 0.1 }, '-=0.5')
+        goAway.to('.involvedLine', { opacity: 0, scale: 0 }, '-=0.5')
+        goAway.to('#headerSlate', { y: -30, opacity: 0 }, '-=0.5')
+        goAway.to('#paraSlate', { y: 30, opacity: 0 }, '-=0.5')
+        goAway.to('.submitButton', { y: 30, opacity: 0 }, '-=0.5')
+        goAway.from('.inputButt', { y: 30, opacity: 0 })
+        goAway.from('.subButt', { y: 30, opacity: 0 }, '-=0.5')
+
+        // ------------------------------------------------MENU-------------------------------------
+
+        let showMenu = gsap.timeline().pause()
+        showMenu.to('.navbar', { opacity: 0, })
+
+        // window.onscroll = function () {
+        //     showMenu.reverse()
+        // }
+
+        setInterval(function () {
+            showMenu.play()
+        }, 5000)
+
+
+
+        function newMenu() {
+            document.getElementById('menu').classList.toggle('hidden')
+            document.getElementById('close').classList.toggle('hidden')
+            document.getElementById('drawer').classList.toggle('hidden')
+        }
+
+
+
+        // ----------------------------form------------------------------------
+
+
+
+        const joinUs = document.getElementById('joinUs')
+        const nl = document.getElementById('newsletter')
+
+        joinUs.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this)
+
+            fetch("https://formsubmit.co/ajax/meenakshi@yugen.org.in", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    showMessage();
+                    console.log(data.message)
+                })
+                .catch(error => console.log(error));
+
+
+        })
+
+
+        nl.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this)
+
+            fetch("https://formsubmit.co/ajax/meenakshi@yugen.org.in", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    showMessage();
+                    console.log(data.message)
+                })
+                .catch(error => console.log(error));
+
+
+        })
+        // function showMessage() {
+        //     document.getElementById('joinUs').classList.add('hidden')
+        //     document.getElementById('message').classList.remove('hidden')
+        // }
+    </script>
+</body>
+
+</html>

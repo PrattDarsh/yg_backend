@@ -88,20 +88,19 @@
                 <div class=" h-32 col-span-1  text-right">
                     <div class="text-5xl"> Events and Blogs</div>
                     <div class="text-xl mt-32 space-y-6">
-                        <button class="w-full text-right" onclick="showCard(1)">Category-1</button>
+                        <button class="w-full text-right" onclick="category(1)">Category-1</button>
                         <div class="w-3/4 float-right h-px bg-gray-800"></div>
-                        <button class="w-full text-right" onclick="showCard(2)">Category-2</button>
+                        <button class="w-full text-right" onclick="category(2)">Category-2</button>
                         <div class="w-3/4 float-right h-px bg-gray-800"></div>
-                        <button class="w-full text-right" onclick="showCard(3)">Category-3</button>
+                        <button class="w-full text-right" onclick="category(3)">Category-3</button>
                         <div class="w-3/4 float-right h-px bg-gray-800"></div>
-                        <button class="w-full text-right" onclick="showCard(4)">Category-4</button>
-                        <div class="w-3/4 float-right h-px bg-gray-800"></div>
+
                     </div>
                 </div>
                 <div class=" h-32 col-span-2 space-y-6">
                     <%for(var i=0;i< blogs.length;i++){%>
                         <div
-                            class="cat1 bg-gray-900 rounded-3xl p-12 transform transition ease-in-out duration-100  hover:-translate-y-1 hover:scale-105">
+                            class="cat1 bg-gray-900 rounded-3xl p-12 transform transition ease-in-out duration-100  hover:-translate-y-1 hover:scale-105 <%=blogs[i].category%>">
                             <p class="text-2xl font-bold">
                                 <%=blogs[i].title%>
                             </p>
@@ -345,49 +344,61 @@
 
             switch (n) {
                 case 1:
-                    document.getElementById('category1').classList.add('font-bold')
-                    document.getElementById('category2').classList.remove('font-bold')
-                    document.getElementById('category3').classList.remove('font-bold')
+                    category2.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
 
-                    for (i = 0; i < category2.length; i++) {
-                        category2[i].classList.toggle('hidden')
+                    category3.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
 
-                    }
+                    category1.forEach((ele) => {
+                        ele.classList.remove('hidden')
+                    })
 
-                    for (i = 0; i < category3.length; i++) {
-                        category3[i].classList.toggle('hidden')
-                    }
+
+
+                    // for (i = 0; i < category2.length; i++) {
+                    //     category2[i].classList.toggle('hidden')
+
+                    // }
+
+                    // for (i = 0; i < category3.length; i++) {
+                    //     category3[i].classList.toggle('hidden')
+                    // }
                     break;
 
 
                 case 2:
-                    document.getElementById('category2').classList.add('font-bold')
-                    document.getElementById('category1').classList.remove('font-bold')
-                    document.getElementById('category3').classList.remove('font-bold')
+                    category2.forEach((ele) => {
+                        ele.classList.remove('hidden')
+                    })
 
-                    for (i = 0; i < category1.length; i++) {
-                        category1[i].classList.toggle('hidden')
+                    category3.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
 
-                    }
+                    category1.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
 
-                    for (i = 0; i < category3.length; i++) {
-                        category3[i].classList.toggle('hidden')
-                    }
+
                     break;
 
                 case 3:
-                    document.getElementById('category3').classList.add('font-bold')
-                    document.getElementById('category2').classList.remove('font-bold')
-                    document.getElementById('category1').classList.remove('font-bold')
+                    category3.forEach((ele) => {
+                        ele.classList.remove('hidden')
+                    })
 
-                    for (i = 0; i < category2.length; i++) {
-                        category2[i].classList.toggle('hidden')
+                    category2.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
 
-                    }
+                    category1.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
 
-                    for (i = 0; i < category1.length; i++) {
-                        category1[i].classList.toggle('hidden')
-                    }
+
                     break;
             }
         }

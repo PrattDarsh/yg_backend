@@ -24,7 +24,15 @@ const blogSchema = new mongoose.Schema({
   category: String,
 });
 
+const bookSchema = new mongoose.Schema({
+  title: String,
+  category: String,
+  age: Number,
+  link: String,
+});
+
 const Blog = new mongoose.model("blog", blogSchema);
+const Book = new mongoose.model("book", bookSchema);
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
@@ -51,6 +59,18 @@ app.post("/blogs/:title", (req, res) => {
         title: article.title,
         author: article.author,
         content: article.content,
+      });
+    }
+  });
+});
+
+app.get("/books", (req, res) => {
+  Book.find({}, (err, allBooks) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("books", {
+        books: allBooks,
       });
     }
   });

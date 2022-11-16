@@ -89,16 +89,16 @@
                 </div>
                 <div class="text-xl mt-32 space-y-6">
                     <p class="font-bold mb-6">Books on:</p>
-                    <button class="w-full text-center md:text-right" onclick="showCard(1)">Making Friends
+                    <button class="w-full text-center md:text-right" onclick="category(1)">Making Friends
                     </button>
                     <div class="w-full float-right h-px bg-green-400"></div>
-                    <button class="w-full text-center md:text-right" onclick="showCard(2)">
+                    <button class="w-full text-center md:text-right" onclick="category(2)">
                         Self-Awareness</button>
                     <div class="w-full float-right h-px bg-green-400"></div>
-                    <button class="w-full text-center md:text-right" onclick="showCard(3)">Relationship
+                    <button class="w-full text-center md:text-right" onclick="category(3)">Relationship
                         Building</button>
                     <div class="w-full float-right h-px bg-green-400"></div>
-                    <button class="w-full text-center md:text-right" onclick="showCard(4)"> Responsible Decision-Making
+                    <button class="w-full text-center md:text-right" onclick="category(4)"> Responsible Decision-Making
                     </button>
                     <div class="w-full float-right h-px bg-green-400"></div>
                 </div>
@@ -119,72 +119,16 @@
             </div>
 
             <div class="md:col-span-3 grid md:grid-cols-3 grid-cols-2 gap-y-4 md:px-12  py-32">
-                <a href="" class="book">
-                    <div class="border-r border-gray-700 border-1 pb-32 hover:bg-gray-900 p-4 transition delay-45">
-                        <p class="text-2xl"> I Am You:<br> A Book about Ubuntu</p>
-                        <p class="text-green-500 mt-6">4-7 years</p>
-                    </div>
-                </a>
-                <a href="" class="book">
-                    <div class="border-r border-gray-700 border-1 pb-32 hover:bg-gray-900 p-4 transition delay-45">
-                        <p class="text-2xl"> I Am You:<br> A Book about Ubuntu</p>
-                        <p class="text-green-500 mt-6">4-7 years</p>
-                    </div>
-                </a>
-                <a href="" class="book">
-                    <div class="border-r border-gray-700 border-1 pb-32 hover:bg-gray-900 p-4 transition delay-45">
-                        <p class="text-2xl"> I Am You:<br> A Book about Ubuntu</p>
-                        <p class="text-green-500 mt-6">4-7 years</p>
-                    </div>
-                </a>
-                <a href="" class="book">
-                    <div class="border-r border-gray-700 border-1 pb-32 hover:bg-gray-900 p-4 transition delay-45">
-                        <p class="text-2xl"> I Am You:<br> A Book about Ubuntu</p>
-                        <p class="text-green-500 mt-6">4-7 years</p>
-                    </div>
-                </a>
-                <a href="" class="book">
-                    <div class="border-r border-gray-700 border-1 pb-32 hover:bg-gray-900 p-4 transition delay-45">
-                        <p class="text-2xl"> I Am You:<br> A Book about Ubuntu</p>
-                        <p class="text-green-500 mt-6">4-7 years</p>
-                    </div>
-                </a>
-                <a href="" class="book">
-                    <div class="border-r border-gray-700 border-1 pb-32 hover:bg-gray-900 p-4 transition delay-45">
-                        <p class="text-2xl"> I Am You:<br> A Book about Ubuntu</p>
-                        <p class="text-green-500 mt-6">4-7 years</p>
-                    </div>
-                </a>
-                <a href=" " class="book">
-                    <div class="border-r border-gray-700 border-1 pb-32 hover:bg-gray-900 p-4 transition delay-45">
-                        <p class="text-2xl"> I Am You:<br> A Book about Ubuntu</p>
-                        <p class="text-green-500 mt-6">4-7 years</p>
-                    </div>
-                </a>
-                <a href="" class="book">
-                    <div class="border-r border-gray-700 border-1 pb-32 hover:bg-gray-900 p-4 transition delay-45">
-                        <p class="text-2xl"> I Am You:<br> A Book about Ubuntu</p>
-                        <p class="text-green-500 mt-6">4-7 years</p>
-                    </div>
-                </a>
-                <a href="" class="book">
-                    <div class="border-r border-gray-700 border-1 pb-32 hover:bg-gray-900 p-4 transition delay-45">
-                        <p class="text-2xl"> I Am You:<br> A Book about Ubuntu</p>
-                        <p class="text-green-500 mt-6">4-7 years</p>
-                    </div>
-                </a>
-                <a href="" class="book">
-                    <div class="border-r border-gray-700 border-1 pb-32 hover:bg-gray-900 p-4 transition delay-45">
-                        <p class="text-2xl"> I Am You:<br> A Book about Ubuntu</p>
-                        <p class="text-green-500 mt-6">4-7 years</p>
-                    </div>
-                </a>
-                <a href="" class="book">
-                    <div class="border-r border-gray-700 border-1 pb-32 hover:bg-gray-900 p-4 transition delay-45">
-                        <p class="text-2xl"> I Am You:<br> A Book about Ubuntu</p>
-                        <p class="text-green-500 mt-6">4-7 years</p>
-                    </div>
-                </a>
+                <%for(var i=0;i< books.length;i++){%>
+                    <a href="<%=books[i].link%>" class="book <%=books[i].category%>">
+                        <div class="border-r border-gray-700 border-1 pb-32 hover:bg-gray-900 p-4 transition delay-45">
+                            <p class="text-2xl">
+                                <%=books[i].title%>
+                            </p>
+                            <p class="text-green-500 mt-6">4-7 years</p>
+                        </div>
+                    </a>
+                    <% } %>
             </div>
         </div>
     </section>
@@ -265,6 +209,93 @@
             document.getElementById('menu').classList.toggle('hidden')
             document.getElementById('close').classList.toggle('hidden')
             document.getElementById('drawer').classList.toggle('hidden')
+        }
+
+        // -----------------------------------------------------CATEGORY-----------------------------------------
+
+        function category(n) {
+            let friends = document.querySelectorAll('.friends')
+            let aware = document.querySelectorAll('.awareness')
+            let relationship = document.querySelectorAll('.relationship')
+            let decision = document.querySelectorAll('.decision')
+
+            switch (n) {
+                case 1:
+                    aware.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
+
+                    relationship.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
+
+                    decision.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
+
+                    friends.forEach((ele) => {
+                        ele.classList.remove('hidden')
+                    })
+
+                    break;
+
+
+                case 2:
+                    aware.forEach((ele) => {
+                        ele.classList.remove('hidden')
+                    })
+
+                    friends.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
+
+                    relationship.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
+
+                    decision.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
+
+
+                    break;
+
+                case 3:
+                    relationship.forEach((ele) => {
+                        ele.classList.remove('hidden')
+                    })
+
+                    friends.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
+
+                    decision.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
+                    aware.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
+
+                    break;
+
+                case 4:
+                    decision.forEach((ele) => {
+                        ele.classList.remove('hidden')
+                    })
+
+                    friends.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
+
+                    relationship.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
+                    aware.forEach((ele) => {
+                        ele.classList.add('hidden')
+                    })
+
+                    break;
+            }
         }
 
 

@@ -1,0 +1,34 @@
+.cursive {
+    font-family: 'Lora', serif;
+}
+
+body {
+    font-family: 'Poppins';
+}
+
+.secHeading{
+    font-family: 'League Spartan', sans-serif;
+}
+
+.curved {
+    border-radius: 56px 0 0 56px;
+}
+
+.curvedFull {
+    border-radius: 56px;
+}
+
+.spaced-out{
+    letter-spacing: 10px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 20px;
+
+}

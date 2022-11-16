@@ -79,25 +79,26 @@
         </div>
     </div>
 
-    <section id="all">
 
 
 
-        <div class="">
-            <div class="grid grid-cols-5 py-32 px-6 gap-6">
-                <div class=" h-32 col-span-1  text-right">
-                    <div class="text-5xl"> Events and Blogs</div>
-                    <div class="text-xl mt-32 space-y-6">
-                        <button class="w-full text-right" onclick="category(1)">Category-1</button>
-                        <div class="w-3/4 float-right h-px bg-gray-800"></div>
-                        <button class="w-full text-right" onclick="category(2)">Category-2</button>
-                        <div class="w-3/4 float-right h-px bg-gray-800"></div>
-                        <button class="w-full text-right" onclick="category(3)">Category-3</button>
-                        <div class="w-3/4 float-right h-px bg-gray-800"></div>
 
-                    </div>
+    <div class="">
+        <div class="grid grid-cols-5 py-32 px-6 gap-6">
+            <div class=" h-32 col-span-1  text-right">
+                <div class="text-5xl"> Events and Blogs</div>
+                <div class="text-xl mt-32 space-y-6">
+                    <button class="w-full text-right" onclick="category(1)">Category-1</button>
+                    <div class="w-3/4 float-right h-px bg-gray-800"></div>
+                    <button class="w-full text-right" onclick="category(2)">Category-2</button>
+                    <div class="w-3/4 float-right h-px bg-gray-800"></div>
+                    <button class="w-full text-right" onclick="category(3)">Category-3</button>
+                    <div class="w-3/4 float-right h-px bg-gray-800"></div>
+
                 </div>
-                <div class=" h-32 col-span-2 space-y-6">
+            </div>
+            <div class=" col-span-4 ">
+                <div class="grid grid-cols-2 gap-6">
                     <%for(var i=0;i< blogs.length;i++){%>
                         <div
                             class="cat1 bg-gray-900 rounded-3xl p-12 transform transition ease-in-out duration-100  hover:-translate-y-1 hover:scale-105 <%=blogs[i].category%>">
@@ -124,120 +125,64 @@
                         </div>
                         <% } %>
                 </div>
-                <div class="border-pink-400 border-2 rounded-3xl col-span-2 p-12">
-                    <p class="text-5xl cursive">
-                        Bridging the Digital Divide: ICT in Education in India
-                    </p>
-                    <p class="mt-12">
-                        In 2012, the Government of India formulated a national policy on ICT-enabled education that
-                        aimed
-                        “at preparing youth to participate creatively in the establishment, sustenance and growth of a
-                        knowledge society, leading to all-round socioeconomic development of the nation and global
-                        competitiveness.” An aggressive campaign was launched by the National Mission on Education
-                        through
-                        Information and Communication Technology (NME-ICT) seeking overhaul educational environment of
-                        the
-                        country by providing network access to remote corners, quality e-content, and low-cost tablet
-                        personal computers (PCs) called Aakash. In 2020, the National Education Policy is still laying
-                        the
-                        framework for integration of technology in education. Given India’s gigantic telecom base, and
-                        the
-                        massive government-led thrust, why has there been so little on-ground progress in ICT-enabled
-                        learning in India?
-                    </p>
-                    <p class="mt-12">
-                        Thus far, the focus in terms of policy making has been on overcoming infrastructural
-                        barriers.There
-                        are good reasons why that has been so—70% of India’s population lives in rural areas and while
-                        India
-                        can boast of the world’s lowest call rates and the most affordable smartphones, the internet
-                        penetration in rural India is only roughly about 20%1. The 2016-17 DISE data indicates that
-                        compared
-                        to 87.64% schools in Delhi that have electricity and computers, Madhya Pradesh has 13.02% of
-                        schools
-                        with the same facilities and Bihar has 6.73% schools with the required infrastructure.2The
-                        rationale
-                        is thatonce these gaps are bridged, internet use would be homogeneous. However, access to ICT
-                        devices and internet is only part of the problem of digital inclusion in rural India and rural
-                        schools. There are major sociocultural and psychological barriers that make the implementation
-                        of
-                        ICT-enabled education challenging.
-                    </p>
-                    <p class="mt-12">
-                        Thus far, the focus in terms of policy making has been on overcoming infrastructural
-                        barriers.There
-                        are good reasons why that has been so—70% of India’s population lives in rural areas and while
-                        India
-                        can boast of the world’s lowest call rates and the most affordable smartphones, the internet
-                        penetration in rural India is only roughly about 20%1. The 2016-17 DISE data indicates that
-                        compared
-                        to 87.64% schools in Delhi that have electricity and computers, Madhya Pradesh has 13.02% of
-                        schools
-                        with the same facilities and Bihar has 6.73% schools with the required infrastructure.2The
-                        rationale
-                        is thatonce these gaps are bridged, internet use would be homogeneous. However, access to ICT
-                        devices and internet is only part of the problem of digital inclusion in rural India and rural
-                        schools. There are major sociocultural and psychological barriers that make the implementation
-                        of
-                        ICT-enabled education challenging.
-                    </p>
-                </div>
             </div>
 
         </div>
 
+    </div>
 
-        <!-- ----------------------------------------FOOTER---------------------------------------------------- -->
-        <section class="mt-12 py-8 bg-gray-900 text-gray-500 px-4 md:px-8 mx-4 md:mx-6 my-6 curvedFull">
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-12  pt-12">
-                <div class="">
-                    <div class="space-y-4">
-                        <a href="index.html"><img class="p-2 md:mx-auto h-16 md:h-24 rounded-full bg-white"
-                                src="images/logo.png" alt=""></a>
-                        <p class="md:text-center">&copy;2022 All rights reserved</p>
-                    </div>
+    <!-- ----------------------------------------FOOTER---------------------------------------------------- -->
+    <section class="mt-12 py-8 bg-gray-900 text-gray-500 px-4 md:px-8 mx-4 md:mx-6 my-6 curvedFull">
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-12  pt-12">
+            <div class="">
+                <div class="space-y-4">
+                    <a href="index.html"><img class="p-2 md:mx-auto h-16 md:h-24 rounded-full bg-white"
+                            src="images/logo.png" alt=""></a>
+                    <p class="md:text-center">&copy;2022 All rights reserved</p>
                 </div>
+            </div>
 
-                <div class="space-y-2">
-                    <p class="font-bold text-xl text-white">Explore</p>
-                    <p class="hover:text-pink-500"><a href="about.html">About us</a></p>
-                    <p class="hover:text-pink-500"><a href="work.html">Our work</a></p>
-                    <p class="hover:text-pink-500"><a href="events.html">Events and blogs</a></p>
-                    <p class="hover:text-pink-500"><a href="index.html#involved">Get involved</a></p>
-                </div>
-                <div class="space-y-2">
-                    <p class="font-bold text-xl text-white">Legal</p>
-                    <p class="hover:text-pink-500"><a href="privacy.html" target="_blank">Privacy policy</a></p>
-                    <p class="hover:text-pink-500"><a href="tandc.html" target="_blank">Terms and conditions</a></p>
-                    <p class="hover:text-pink-500"><a href="refund.html" target="_blank">Refund policy</a></p>
-
-                </div>
-
-
-
-                <div class="space-y-12">
-                    <div class="space-y-2">
-                        <p class="font-bold text-xl text-white">Visit</p>
-                        <p class="leading-loose">Yugen Education Foundation<br>
-                            C-404, Meenakshi Mangalam,<br>
-                            2nd Main Bannerghatta Road, Begur
-                            Hobli,<br>
-                            Bengaluru,
-                            Karnataka - 560076
-                        </p>
-                    </div>
-
-                </div>
-
-
+            <div class="space-y-2">
+                <p class="font-bold text-xl text-white">Explore</p>
+                <p class="hover:text-pink-500"><a href="about.html">About us</a></p>
+                <p class="hover:text-pink-500"><a href="work.html">Our work</a></p>
+                <p class="hover:text-pink-500"><a href="events.html">Events and blogs</a></p>
+                <p class="hover:text-pink-500"><a href="index.html#involved">Get involved</a></p>
+            </div>
+            <div class="space-y-2">
+                <p class="font-bold text-xl text-white">Legal</p>
+                <p class="hover:text-pink-500"><a href="privacy.html" target="_blank">Privacy policy</a></p>
+                <p class="hover:text-pink-500"><a href="tandc.html" target="_blank">Terms and conditions</a></p>
+                <p class="hover:text-pink-500"><a href="refund.html" target="_blank">Refund policy</a></p>
 
             </div>
 
 
-        </section>
+
+            <div class="space-y-12">
+                <div class="space-y-2">
+                    <p class="font-bold text-xl text-white">Visit</p>
+                    <p class="leading-loose">Yugen Education Foundation<br>
+                        C-404, Meenakshi Mangalam,<br>
+                        2nd Main Bannerghatta Road, Begur
+                        Hobli,<br>
+                        Bengaluru,
+                        Karnataka - 560076
+                    </p>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
 
     </section>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
     <script>

@@ -83,53 +83,53 @@
 
 
 
-    <div class="">
-        <div class="grid grid-cols-5 py-32 px-6 gap-6">
-            <div class=" h-32 col-span-1  text-right">
-                <div class="text-5xl"> Events and Blogs</div>
-                <div class="text-xl mt-32 space-y-6">
-                    <button class="w-full text-right" onclick="category(1)">Category-1</button>
-                    <div class="w-3/4 float-right h-px bg-gray-800"></div>
-                    <button class="w-full text-right" onclick="category(2)">Category-2</button>
-                    <div class="w-3/4 float-right h-px bg-gray-800"></div>
-                    <button class="w-full text-right" onclick="category(3)">Category-3</button>
-                    <div class="w-3/4 float-right h-px bg-gray-800"></div>
 
-                </div>
+    <div class="grid md:grid-cols-4 ">
+        <div class="  text-black font-b  md:col-span-1 text-right bg-pink-400 px-6 py-32 h-full sideBar">
+            <div class="text-7xl font-bold"> Events and Blogs</div>
+            <div class="text-xl mt-32 space-y-6">
+                <button class="w-full text-right" onclick="category(1)">Category-1</button>
+                <div class="w-3/4 float-right h-px bg-pink-500"></div>
+                <button class="w-full text-right" onclick="category(2)">Category-2</button>
+                <div class="w-3/4 float-right h-px bg-pink-500"></div>
+                <button class="w-full text-right" onclick="category(3)">Category-3</button>
+                <div class="w-3/4 float-right h-px bg-pink-500"></div>
+
             </div>
-            <div class=" col-span-4 ">
-                <div class="grid grid-cols-2 gap-6">
-                    <%for(var i=0;i< blogs.length;i++){%>
-                        <div
-                            class="cat1 bg-gray-900 rounded-3xl p-12 transform transition ease-in-out duration-100  hover:-translate-y-1 hover:scale-105 <%=blogs[i].category%>">
-                            <p class="text-2xl font-bold">
-                                <%=blogs[i].title%>
-                            </p>
-                            <div class="flex items-center space-x-4">
-                                <p class="text-gray-500">26th January 2019</p>
-                                <div class="h-2 w-2 bg-white rounded-full"></div>
-                                <p class="text-gray-500">
-                                    <%=blogs[i].author%>
-                                </p>
-                            </div>
-
-                            <p class="mt-2">
-                                <%=blogs[i].content%>
-                            </p>
-                            <form type="submit" method="post" action="/blogs/<%=blogs[i].title%>">
-                                <button>
-                                    <p class="mt-6 underline text-pink-400">Read more</p>
-                                </button>
-                            </form>
-
-                        </div>
-                        <% } %>
-                </div>
-            </div>
-
         </div>
+        <!-- <div class=" col-span-4 "> -->
+        <div class="md:col-span-3 grid md:grid-cols-3 gap-4 grid-cols-2 gap-y-4 md:px-12  py-32">
+            <%for(var i=0;i< blogs.length;i++){%>
+                <div
+                    class="cat1 bg-gray-900 curvedFull p-12 transform transition ease-in-out duration-100  hover:-translate-y-1 hover:scale-105 <%=blogs[i].category%>">
+                    <p class="text-2xl font-bold">
+                        <%=blogs[i].title%>
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <p class="text-gray-500">26th January 2019</p>
+                        <div class="h-2 w-2 bg-white rounded-full"></div>
+                        <p class="text-gray-500">
+                            <%=blogs[i].author%>
+                        </p>
+                    </div>
+
+                    <!-- <p class="mt-2">
+                            <%=blogs[i].content%>
+                        </p> -->
+                    <form type="submit" method="post" action="/blogs/<%=blogs[i].title%>">
+                        <button>
+                            <p class="mt-6 underline text-pink-400">Read more</p>
+                        </button>
+                    </form>
+
+                </div>
+                <% } %>
+        </div>
+        <!-- </div> -->
 
     </div>
+
+
 
 
     <!-- ----------------------------------------FOOTER---------------------------------------------------- -->

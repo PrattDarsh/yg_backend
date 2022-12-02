@@ -38,23 +38,22 @@
 
             <div class=" text-white items-center justify-center md:flex" id="menu_items">
                 <div class="space-x-6 flex-wrap md:flex hidden">
-                    <a href="/about" class="hover:text-white transition delay-45">
-                        <p>About us</p>
-                    </a>
-                    <a href="/work" class="hover:text-white transition delay-45">
-                        <p>Our work</p>
-                    </a>
+                    <form action="/about" method="post" type="submit">
+                        <button>About us</button>
+                    </form>
+                    <form action="/work" method="post" type="submit">
+                        <button>Our Work</button>
+                    </form>
                     <form method="post" action="/blogs">
                         <button type="submit">
                             <p>Events and Blogs</p>
                         </button>
                     </form>
+                    <form action="/" method="get" type="submit">
+                        <button>Get Involved</button>
+                    </form>
 
 
-
-                    <a href="#involved" class="hover:text-white transition delay-45">
-                        <p>Get involved</p>
-                    </a>
                 </div>
                 <button class="hamburger md:hidden" onclick="newMenu()"><svg id="menu"
                         class="fill-current text-white h-8 md:h-10" clip-rule="evenodd" fill-rule="evenodd"
@@ -140,9 +139,11 @@
                     a lifetime of work, learning, and passion. Our goal is to create communities of life-long learning
                     for
                     both kids and adults affiliated with schools.</p>
-                <a href="about.html"
-                    class="border-2 border-purple-700 rounded-full py-4 md:py-6 px-16 md:px-24  transform transition delay-45  hover:bg-purple-700 hover:text-white">Know
-                    More</a>
+                <form action="/about" method="post" type="submit">
+                    <button
+                        class="border-2 border-purple-700 rounded-full py-4 md:py-6 px-16 md:px-24  transform transition delay-45  hover:bg-purple-700 hover:text-white">About
+                        us</button>
+                </form>
 
             </div>
 
@@ -167,9 +168,11 @@
                     towards
                     building a collection of small but meaningful solutions.</p>
 
-                <a href="work.html"
-                    class="border-2 border-yellow-500 rounded-full py-4 md:py-6 px-16 md:px-24  transform transition delay-45  hover:bg-yellow-500 hover:text-white">Know
-                    More</a>
+                <form action="/work" method="post" type="submit">
+                    <button
+                        class="border-2 border-yellow-500 rounded-full py-4 md:py-6 px-16 md:px-24  transform transition delay-45  hover:bg-yellow-500 hover:text-white">About
+                        us</button>
+                </form>
             </div>
         </section>
 
@@ -382,7 +385,7 @@
                                     the schools.</p>
                             </div>
                             <div class="flex items-center justify-center">
-                                <form method="post" action="/books">
+                                <form method="get" action="/books">
                                     <button class=" mt-12 text-white py-6 px-12 rounded-full bg-green-500">
                                         We're getting the list ready!
                                     </button>
@@ -493,20 +496,36 @@
 
                 <div class="space-y-2">
                     <p class="font-bold text-xl text-white">Explore</p>
-                    <p class="hover:text-white"><a href="/about">About us</a></p>
-                    <p class="hover:text-white"><a href="/work">Our work</a></p>
+                    <form action="/about" method="post" type="submit">
+                        <button>About us</button>
+                    </form>
+                    <form action="/work" method="post" type="submit">
+                        <button>Our Work</button>
+                    </form>
                     <form method="post" action="/blogs">
                         <button type="submit">
                             <p>Events and Blogs</p>
                         </button>
                     </form>
-                    <p class="hover:text-white"><a href="/">Get involved</a></p>
+                    <form action="/" method="get" type="submit">
+                        <button>Get Involved</button>
+                    </form>
                 </div>
                 <div class="space-y-2">
                     <p class="font-bold text-xl text-white">Legal</p>
-                    <p class="hover:text-white"><a href="/privacy" target="_blank">Privacy policy</a></p>
-                    <p class="hover:text-white"><a href="/tandc" target="_blank">Terms and conditions</a></p>
-                    <p class="hover:text-white"><a href="/refund" target="_blank">Refund policy</a></p>
+                    <form action="/privacy" method="post" type="submit" target="_blank">
+                        <button>Privacy policy</button>
+                    </form>
+                    <form action="/tandc" method="post" type="submit" target="_blank">
+                        <button>Terms and conditions</button>
+                    </form>
+                    <form method="post" action="/refund" target="_blank">
+                        <button type="submit">
+                            <p>Refund policy</p>
+                        </button>
+                    </form>
+
+
 
                 </div>
 

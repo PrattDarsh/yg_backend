@@ -32,21 +32,24 @@
 
 
             <div class=" text-white items-center justify-center md:flex" id="menu_items">
+
                 <div class="space-x-6 flex-wrap md:flex hidden text-gray-400">
-                    <a href="about.html" class="hover:text-white transition delay-45">
-                        <p>About us</p>
-                    </a>
-                    <a href="work.html" class="hover:text-white transition delay-45">
-                        <p>Our work</p>
-                    </a>
-                    <form method="post" action="/blogs">
+                    <form action="/about" method="post" type="submit" class="hover:text-white transition delay-45">
+                        <button>About us</button>
+                    </form>
+                    <form action="/work" method="post" type="submit" class="hover:text-white transition delay-45">
+                        <button>Our Work</button>
+                    </form>
+                    <form method="post" action="/blogs" class="hover:text-white transition delay-45">
                         <button type="submit">
-                            <p class="hover:text-white transition delay-45">Events and Blogs</p>
+                            <p>Events and Blogs</p>
                         </button>
                     </form>
-                    <a href="index.html#involved" class="hover:text-white transition delay-45">
-                        <p>Get involved</p>
-                    </a>
+                    <form action="/" method="get" type="submit" class="hover:text-white transition delay-45">
+                        <button>Get Involved</button>
+                    </form>
+
+
                 </div>
                 <button class="hamburger md:hidden" onclick="newMenu()"><svg id="menu"
                         class="fill-current text-white h-8 md:h-10" clip-rule="evenodd" fill-rule="evenodd"
@@ -125,20 +128,34 @@
 
             <div class="space-y-2">
                 <p class="font-bold text-xl text-white">Explore</p>
-                <p class="hover:text-white"><a href="/about">About us</a></p>
-                <p class="hover:text-white"><a href="/work">Our work</a></p>
-                <form method="post" action="/blogs">
+                <form action="/about" method="post" type="submit" class="hover:text-white transition delay-45">
+                    <button>About us</button>
+                </form>
+                <form action="/work" method="post" type="submit" class="hover:text-white transition delay-45">
+                    <button>Our Work</button>
+                </form>
+                <form method="post" action="/blogs" class="hover:text-white transition delay-45">
                     <button type="submit">
                         <p>Events and Blogs</p>
                     </button>
                 </form>
-                <p class="hover:text-white"><a href="/">Get involved</a></p>
+                <form action="/" method="get" type="submit" class="hover:text-white transition delay-45">
+                    <button>Get Involved</button>
+                </form>
             </div>
             <div class="space-y-2">
                 <p class="font-bold text-xl text-white">Legal</p>
-                <p class="hover:text-white"><a href="/privacy" target="_blank">Privacy policy</a></p>
-                <p class="hover:text-white"><a href="/tandc" target="_blank">Terms and conditions</a></p>
-                <p class="hover:text-white"><a href="/refund" target="_blank">Refund policy</a></p>
+                <form action="/privacy" method="post" type="submit" target="_blank" class="hover:text-white">
+                    <button>Privacy policy</button>
+                </form>
+                <form action="/tandc" method="post" type="submit" target="_blank" class="hover:text-white">
+                    <button>Terms and conditions</button>
+                </form>
+                <form method="post" action="/refund" target="_blank" class="hover:text-white">
+                    <button type="submit">
+                        <p>Refund policy</p>
+                    </button>
+                </form>
 
             </div>
 

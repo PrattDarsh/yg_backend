@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&family=Lora:ital@1&family=Poppins&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>About</title>
+</head>
+
+
+<body class="bg-black transition duration-700 text-white overflow-x-hidden text-justify">
+
+    <div class="fixed  left-0 right-0  bg-black md:bg-transparent  px-4 md:px-12   my-4 curvedFull w-full z-50 navbar"
+        id="navbar" onmouseover="showMenu.reverse()">
+        <div class=" flex justify-between items-center text-white py-2  z-50">
+            <div class="">
+                <form action="/" method="get" type="submit">
+                    <button>
+                        <img src="images/logo_white.png" class="h-16 md:h-18" id="yugen_white" alt=""></button>
+
+                </form>
+
+            </div>
+
+
+
+            <div class=" text-white items-center justify-center md:flex" id="menu_items">
+                <div class="space-x-6 flex-wrap md:flex hidden text-gray-400">
+                    <a href="/about" class="hover:text-green-500 transition delay-45">
+                        <p>About us</p>
+                    </a>
+                    <a href="/work" class="hover:text-green-500 transition delay-45">
+                        <p>Our work</p>
+                    </a>
+                    <form method="post" action="/blogs">
+                        <button type="submit">
+                            <p>Events and Blogs</p>
+                        </button>
+                    </form>
+                    <a href="/" class="hover:text-green-500 transition delay-45">
+                        <p>Get involved</p>
+                    </a>
+                </div>
+                <button class="hamburger md:hidden" onclick="newMenu()"><svg id="menu"
+                        class="fill-current text-white h-8 md:h-10" clip-rule="evenodd" fill-rule="evenodd"
+                        stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m11 16.745c0-.414.336-.75.75-.75h9.5c.414 0 .75.336.75.75s-.336.75-.75.75h-9.5c-.414 0-.75-.336-.75-.75zm-9-5c0-.414.336-.75.75-.75h18.5c.414 0 .75.336.75.75s-.336.75-.75.75h-18.5c-.414 0-.75-.336-.75-.75zm4-5c0-.414.336-.75.75-.75h14.5c.414 0 .75.336.75.75s-.336.75-.75.75h-14.5c-.414 0-.75-.336-.75-.75z"
+                            fill-rule="nonzero" />
+                    </svg></button>
+                <button class="hamburger " onclick="newMenu()"><svg id="close"
+                        class="fill-current text-white h-8 md:h-12 hidden" clip-rule="evenodd" fill-rule="evenodd"
+                        stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m12 10.93 5.719-5.72c.146-.146.339-.219.531-.219.404 0 .75.324.75.749 0 .193-.073.385-.219.532l-5.72 5.719 5.719 5.719c.147.147.22.339.22.531 0 .427-.349.75-.75.75-.192 0-.385-.073-.531-.219l-5.719-5.719-5.719 5.719c-.146.146-.339.219-.531.219-.401 0-.75-.323-.75-.75 0-.192.073-.384.22-.531l5.719-5.719-5.72-5.719c-.146-.147-.219-.339-.219-.532 0-.425.346-.749.75-.749.192 0 .385.073.531.219z" />
+                    </svg></button>
+
+            </div>
+
+        </div>
+        <div class="space-x-6  text-white px-4 py-4 hidden" id="drawer">
+            <a href="about.html" class="hover:text-green-500 transition delay-45">
+                <p>About us</p>
+            </a>
+            <a href="work.html" class="hover:text-green-500 transition delay-45">
+                <p>Our work</p>
+            </a>
+            <a href="events.html" class="hover:text-green-500 transition delay-45">
+                <p>Events and Blogs</p>
+            </a>
+            <a href="index.html#involved" class="hover:text-green-500 transition delay-45">
+                <p>Get involved</p>
+            </a>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
+    <script>
+
+
+
+
+        // ------------------------------------------------MENU-------------------------------------
+
+
+        let showMenu = gsap.timeline().pause()
+        showMenu.to('.navbar', { y: -30, opacity: 0, duration: 0.2 })
+
+        // window.onscroll = function () {
+        //     showMenu.reverse()
+        // }
+
+        setInterval(function () {
+            showMenu.play()
+        }, 5000)
+
+
+
+        function newMenu() {
+            document.getElementById('menu').classList.toggle('hidden')
+            document.getElementById('close').classList.toggle('hidden')
+            document.getElementById('drawer').classList.toggle('hidden')
+        }
+    </script>
+</body>

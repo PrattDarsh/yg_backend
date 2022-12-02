@@ -64,11 +64,11 @@ app.post("/blogs/:title", (req, res) => {
   });
 });
 
-app.get("/:page", (req, res) => {
+app.post("/:page", (req, res) => {
   res.sendFile(__dirname + "/" + req.params.page + ".html");
 });
 
-app.post("/books", (req, res) => {
+app.get("/books", (req, res) => {
   Book.find({}, (err, allBooks) => {
     if (err) {
       console.log(err);
@@ -79,6 +79,8 @@ app.post("/books", (req, res) => {
     }
   });
 });
+
+// app.get('/admin')
 
 app.listen(process.env.PORT || 3000, (req, res) => {
   console.log("Server Running");

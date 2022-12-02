@@ -153,20 +153,35 @@
 
             <div class="space-y-2">
                 <p class="font-bold text-xl text-white">Explore</p>
-                <p class="hover:text-pink-500"><a href="/about">About us</a></p>
-                <p class="hover:text-pink-500"><a href="/work">Our work</a></p>
-                <form method="post" action="/blogs">
+                <form action="/about" method="post" type="submit" class="hover:text-pink-500 transition delay-45">
+                    <button>About us</button>
+                </form>
+                <form action="/work" method="post" type="submit" class="hover:text-pink-500 transition delay-45">
+                    <button>Our Work</button>
+                </form>
+                <form method="post" action="/blogs" class="hover:text-pink-500 transition delay-45">
                     <button type="submit">
                         <p>Events and Blogs</p>
                     </button>
                 </form>
-                <p class="hover:text-pink-500"><a href="/">Get involved</a></p>
+                <form action="/" method="get" type="submit" class="hover:text-pink-500 transition delay-45">
+                    <button>Get Involved</button>
+                </form>
             </div>
             <div class="space-y-2">
                 <p class="font-bold text-xl text-white">Legal</p>
-                <p class="hover:text-pink-500"><a href="/privacy" target="_blank">Privacy policy</a></p>
-                <p class="hover:text-pink-500"><a href="/tandc" target="_blank">Terms and conditions</a></p>
-                <p class="hover:text-pink-500"><a href="/refund" target="_blank">Refund policy</a></p>
+                <form action="/privacy" method="post" type="submit" target="_blank" class="hover:text-pink-500">
+                    <button>Privacy policy</button>
+                </form>
+                <form action="/tandc" method="post" type="submit" target="_blank" class="hover:text-pink-500">
+                    <button>Terms and conditions</button>
+                </form>
+                <form method="post" action="/refund" target="_blank" class="hover:text-pink-500">
+                    <button type="submit">
+                        <p>Refund policy</p>
+                    </button>
+                </form>
+
 
             </div>
 

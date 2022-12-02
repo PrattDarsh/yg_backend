@@ -38,7 +38,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/blogs", (req, res) => {
+app.post("/blogs", (req, res) => {
   Blog.find({}, (err, allBlogs) => {
     if (err) {
       console.log(err);
@@ -64,7 +64,11 @@ app.post("/blogs/:title", (req, res) => {
   });
 });
 
-app.get("/books", (req, res) => {
+app.get("/:page", (req, res) => {
+  res.sendFile(__dirname + "/" + req.params.page + ".html");
+});
+
+app.post("/books", (req, res) => {
   Book.find({}, (err, allBooks) => {
     if (err) {
       console.log(err);

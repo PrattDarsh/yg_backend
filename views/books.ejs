@@ -34,16 +34,18 @@
 
             <div class=" text-white items-center justify-center md:flex" id="menu_items">
                 <div class="space-x-6 flex-wrap md:flex hidden text-gray-400">
-                    <a href="about.html" class="hover:text-green-500 transition delay-45">
+                    <a href="/about" class="hover:text-green-500 transition delay-45">
                         <p>About us</p>
                     </a>
-                    <a href="work.html" class="hover:text-green-500 transition delay-45">
+                    <a href="/work" class="hover:text-green-500 transition delay-45">
                         <p>Our work</p>
                     </a>
-                    <a href="events.html" class="hover:text-green-500 transition delay-45">
-                        <p>Events and Blogs</p>
-                    </a>
-                    <a href="index.html#involved" class="hover:text-green-500 transition delay-45">
+                    <form method="post" action="/blogs">
+                        <button type="submit">
+                            <p>Events and Blogs</p>
+                        </button>
+                    </form>
+                    <a href="/" class="hover:text-green-500 transition delay-45">
                         <p>Get involved</p>
                     </a>
                 </div>
@@ -137,26 +139,36 @@
     <section class="mt-12 py-8 bg-gray-900 text-gray-500 px-4 md:px-8 mx-4 md:mx-6 my-6 curvedFull">
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-12  pt-12">
-            <div class="">
+
+            <div class="flex items-center justify-center">
                 <div class="space-y-4">
-                    <a href="index.html"><img class="p-2 md:mx-auto h-16 md:h-24 rounded-full bg-white"
-                            src="images/logo.png" alt=""></a>
+                    <form action="/" method="get" class="flex justify-center" type="submit">
+                        <button class="">
+                            <img src="images/logo.png" class="bg-white rounded-full p-2 h-16 md:h-24" id="yugen_white"
+                                alt=""></button>
+
+                    </form>
                     <p class="md:text-center">&copy;2022 All rights reserved</p>
                 </div>
             </div>
 
+
             <div class="space-y-2">
                 <p class="font-bold text-xl text-white">Explore</p>
-                <p class="hover:text-green-500"><a href="about.html">About us</a></p>
-                <p class="hover:text-green-500"><a href="work.html">Our work</a></p>
-                <p class="hover:text-green-500"><a href="events.html">Events and blogs</a></p>
-                <p class="hover:text-green-500"><a href="index.html#involved">Get involved</a></p>
+                <p class="hover:text-green-500"><a href="/about">About us</a></p>
+                <p class="hover:text-green-500"><a href="/work">Our work</a></p>
+                <form method="post" action="/blogs">
+                    <button type="submit">
+                        <p>Events and Blogs</p>
+                    </button>
+                </form>
+                <p class="hover:text-green-500"><a href="/">Get involved</a></p>
             </div>
             <div class="space-y-2">
                 <p class="font-bold text-xl text-white">Legal</p>
-                <p class="hover:text-green-500"><a href="privacy.html" target="_blank">Privacy policy</a></p>
-                <p class="hover:text-green-500"><a href="tandc.html" target="_blank">Terms and conditions</a></p>
-                <p class="hover:text-green-500"><a href="refund.html" target="_blank">Refund policy</a></p>
+                <p class="hover:text-green-500"><a href="/privacy" target="_blank">Privacy policy</a></p>
+                <p class="hover:text-green-500"><a href="/tandc" target="_blank">Terms and conditions</a></p>
+                <p class="hover:text-green-500"><a href="/refund" target="_blank">Refund policy</a></p>
 
             </div>
 

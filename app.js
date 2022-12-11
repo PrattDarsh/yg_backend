@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const { dirname } = require("path");
+const e = require("express");
 
 const app = express();
 
@@ -120,7 +121,29 @@ app.post("/dashboard/newblog", (req, res) => {
     if (!err) {
       res.render("success", {
         title: req.body.title,
+        message: "Your blog has been uploaded.",
       });
+    }
+  });
+});
+
+app.post("/dashboard/newbook", (req, res) => {
+  console.log("called");
+  const newBook = new Book({
+    title: req.body.bookName,
+    category: req.body.bookCategory,
+    age: req.body.ageGap,
+    link: req.body.link,
+  });
+
+  newBook.save((err) => {
+    if (!err) {
+      res.render("success", {
+        title: "",
+        message: "Your book has been added.",
+      });
+    } else {
+      console.log(err);
     }
   });
 });

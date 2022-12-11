@@ -100,7 +100,7 @@
                 <%=user%>
             </span>
         </p>
-        <div class="grid md:grid-cols-2 mt-12">
+        <div class="grid md:grid-cols-2 gap-x-12 mt-12">
             <div class="curvedFull bg-gray-900 py-28 px-6  ">
                 <p class="text-2xl md:text-3xl text-center">Add new blog</p>
                 <div class="h-1 bg-pink-500 w-32 mt-6 mx-auto"></div>
@@ -130,7 +130,40 @@
                         <textarea name="content" class="w-full bg-gray-800 curvedFull py-6 px-6 focus:outline-none mt-2"
                             placeholder="Enter content here"></textarea>
                     </div>
-                    <button class="w-full bg-pink-500 curvedFull py-6 text-xl">Submit</button>
+                    <button class="w-full bg-pink-500 curvedFull py-6 text-xl">Publish</button>
+
+                </form>
+            </div>
+            <div class="curvedFull bg-gray-900 py-28 px-6  ">
+                <p class="text-2xl md:text-3xl text-center">Add new book</p>
+                <div class="h-1 bg-green-500 w-32 mt-6 mx-auto"></div>
+                <form action="/dashboard/newbook" method="post" class="mt-4 space-y-12">
+                    <div class="">
+                        <p class="text-xl ml-6">Book's Name</p>
+                        <input type="text" name="bookName"
+                            class="w-full bg-gray-800 curvedFull py-6 px-6 focus:outline-none mt-2">
+                    </div>
+
+
+                    <div class="">
+                        <p class="text-xl ml-6">Category</p>
+                        <input type="text" name="bookCategory"
+                            class="w-full bg-gray-800 curvedFull py-6 px-6 focus:outline-none mt-2">
+                    </div>
+
+                    <div class="">
+                        <p class="text-xl ml-6">Age</p>
+                        <input type="number" name="ageGap"
+                            class="w-full bg-gray-800 curvedFull py-6 px-6 focus:outline-none mt-2">
+                    </div>
+
+                    <div class="">
+                        <p class="text-xl ml-6">Link</p>
+                        <input type="text" name="link"
+                            class="w-full bg-gray-800 curvedFull py-6 px-6 focus:outline-none mt-2">
+                    </div>
+
+                    <button class="w-full bg-green-500 curvedFull py-6 text-xl" type="submit">Publish</button>
 
                 </form>
             </div>

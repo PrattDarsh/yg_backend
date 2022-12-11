@@ -16,6 +16,16 @@
     <title>About</title>
 </head>
 
+<style>
+    ::-webkit-calendar-picker-indicator {
+        color: orange;
+    }
+
+    ::-webkit-inner-spin-button {
+        display: none;
+    }
+
+</style>
 
 <body class="bg-black transition duration-700 text-white overflow-x-hidden text-justify">
 
@@ -91,10 +101,10 @@
             </span>
         </p>
         <div class="grid md:grid-cols-2 mt-12">
-            <div class="curvedFull bg-gray-900 py-12 px-6  ">
+            <div class="curvedFull bg-gray-900 py-28 px-6  ">
                 <p class="text-2xl md:text-3xl text-center">Add new blog</p>
                 <div class="h-1 bg-pink-500 w-32 mt-6 mx-auto"></div>
-                <form action=" " class="mt-4 space-y-12">
+                <form action="/dashboard/newblog" method="post" class="mt-4 space-y-12">
                     <div class="">
                         <p class="text-xl ml-6">Title</p>
                         <input type="text" name="title"
@@ -102,19 +112,26 @@
                     </div>
                     <div class="">
                         <p class="text-xl ml-6">Author</p>
-                        <input type="text" name="title"
+                        <input type="text" name="author"
                             class="w-full bg-gray-800 curvedFull py-6 px-6 focus:outline-none mt-2">
                     </div>
                     <div class="">
                         <p class="text-xl ml-6">Published Date</p>
-                        <input type="date" name="title"
+                        <input type="text" name="date"
+                            class="w-full bg-gray-800 curvedFull py-6 px-6 focus:outline-none mt-2">
+                    </div>
+                    <div class="">
+                        <p class="text-xl ml-6">Category</p>
+                        <input type="text" name="category"
                             class="w-full bg-gray-800 curvedFull py-6 px-6 focus:outline-none mt-2">
                     </div>
                     <div class="">
                         <p class="text-xl ml-6">Content</p>
-                        <input type="text" name="title"
-                            class="w-full bg-gray-800 curvedFull py-6 px-6 focus:outline-none mt-2">
+                        <textarea name="content" class="w-full bg-gray-800 curvedFull py-6 px-6 focus:outline-none mt-2"
+                            placeholder="Enter content here"></textarea>
                     </div>
+                    <button class="w-full bg-pink-500 curvedFull py-6 text-xl">Submit</button>
+
                 </form>
             </div>
         </div>

@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const { dirname } = require("path");
 
 const app = express();
 
@@ -22,6 +23,7 @@ const blogSchema = new mongoose.Schema({
   author: String,
   content: String,
   category: String,
+  date: String,
 });
 
 const userSchema = new mongoose.Schema({
@@ -72,31 +74,55 @@ app.post("/blogs/:title", (req, res) => {
 
 app.post("/:page", (req, res) => {
   if (req.params.page == "admin") {
-    const Username = req.body.username;
+    const Username = req.body.name;
     const Password = req.body.pass;
-
-    user.findOne({ Username: Username }, (err, foundUser) => {
+    console.log("user" + Username);
+    console.log("pass" + Password);
+    user.findOne({ username: Username }, (err, foundUser) => {
       if (err) {
         console.log(err);
       } else {
+        console.log(foundUser);
         if (foundUser) {
-          console.log(foundUser);
+          app.set("user", foundUser);
           if (foundUser.pass === Password) {
-            app.set("user", foundUser);
-            res.render("admin", {
-              user: foundUser.username,
-            });
+            res.redirect("dashboard");
           } else {
             res.send("Incorrect Password");
           }
         } else {
-          res.send("Dunno you");
+          res.send("Incorrect Username");
         }
       }
     });
   } else {
     res.sendFile(__dirname + "/" + req.params.page + ".html");
   }
+});
+
+app.get("/dashboard", (req, res) => {
+  const user = app.get("user");
+  res.render("admin", {
+    user: user.username,
+  });
+});
+
+app.post("/dashboard/newblog", (req, res) => {
+  const newBlog = new Blog({
+    title: req.body.title,
+    author: req.body.author,
+    content: req.body.content,
+    category: req.body.category,
+    date: req.body.date,
+  });
+
+  newBlog.save((err) => {
+    if (!err) {
+      res.render("success", {
+        title: req.body.title,
+      });
+    }
+  });
 });
 
 app.get("/admin", (req, res) => {

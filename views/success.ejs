@@ -13,7 +13,9 @@
         href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&family=Lora:ital@1&family=Poppins&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Blog uploaded successfully</title>
+    <title>
+        <%=message%>
+    </title>
 </head>
 
 
@@ -36,10 +38,20 @@
                             Blog</button>
                     </form>
                     <%}%>
-                        <form action="/dashboard">
-                            <button class="btn w-full py-6 text-xl text-white mt-6  rounded-full bg-yellow-500">Back to
-                                dashboard</button>
-                        </form>
+                        <%if(message!='You have successfully subscribed to our newsletter!'){%>
+                            <form action="/dashboard">
+                                <button class="btn w-full py-6 text-xl text-white mt-6  rounded-full bg-yellow-500">Back
+                                    to
+                                    dashboard</button>
+                            </form>
+                            <%}else{%>
+                                <form action="/">
+                                    <button
+                                        class="btn w-full py-6 text-xl text-white mt-6  rounded-full bg-yellow-500">Back
+                                        to
+                                        homepage</button>
+                                </form>
+                                <%}%>
             </div>
         </div>
     </section>

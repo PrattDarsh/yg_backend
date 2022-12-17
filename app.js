@@ -39,9 +39,15 @@ const bookSchema = new mongoose.Schema({
   link: String,
 });
 
+const subsSchema = new mongoose.Schema({
+  name: String,
+  mail: String,
+});
+
 const Blog = new mongoose.model("blog", blogSchema);
 const Book = new mongoose.model("book", bookSchema);
 const user = new mongoose.model("user", userSchema);
+const Subs = new mongoose.model("subscriber", subsSchema);
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
@@ -96,6 +102,20 @@ app.post("/:page", (req, res) => {
         }
       }
     });
+  } else if (req.params.page == "newsletter") {
+    const newSub = new Subs({
+      name: req.body.Name,
+      mail: req.body.Email,
+    });
+
+    newSub.save((err) => {
+      if (!err) {
+        res.render("success", {
+          title: "",
+          message: "You have successfully subscribed to our newsletter!",
+        });
+      }
+    });
   } else {
     res.sendFile(__dirname + "/" + req.params.page + ".html");
   }
@@ -103,8 +123,16 @@ app.post("/:page", (req, res) => {
 
 app.get("/dashboard", (req, res) => {
   const user = app.get("user");
-  res.render("admin", {
-    user: user.username,
+  Subs.find({}, (err, allSubs) => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log(allSubs);
+      res.render("admin", {
+        user: user.username,
+        subs: allSubs,
+      });
+    }
   });
 });
 

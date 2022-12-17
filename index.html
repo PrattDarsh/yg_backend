@@ -444,14 +444,14 @@
                     </div>
                     <form
                         class="flex flex-wrap items-center justify-center space-y-2 md:space-y-0 md:space-x-4 mt-12 md:mt-0"
-                        action="" id="newsletter">
+                        action="/newsletter" method="post" id="newsletter">
                         <input type="text" name="Name"
                             class="w-full md:w-72 focus:outline-none border-2 border-green-500   bg-transparent text-green-500 text-center py-6 placeholder-green-500 px-4 rounded-full"
                             placeholder="Name"> <input type="email" name="Email"
                             class="w-full md:w-72 focus:outline-none border-2 border-green-500   bg-transparent text-green-500 text-center py-6 placeholder-green-500 px-4 rounded-full"
                             placeholder="Email Address">
-                        <input type="hidden" name="Message" value="I want sign up to your newsletter.">
-                        <button class="w-full md:w-32 text-white py-6 px-4 rounded-full bg-green-500">
+
+                        <button type="submit" class="w-full md:w-32 text-white py-6 px-4 rounded-full bg-green-500">
                             Sign up
                         </button>
                     </form>
@@ -961,45 +961,45 @@
 
 
 
-        const joinUs = document.getElementById('joinUs')
-        const nl = document.getElementById('newsletter')
+        // const joinUs = document.getElementById('joinUs')
+        // const nl = document.getElementById('newsletter')
 
-        joinUs.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const formData = new FormData(this)
+        // joinUs.addEventListener('submit', function (e) {
+        //     e.preventDefault();
+        //     const formData = new FormData(this)
 
-            fetch("https://formsubmit.co/ajax/meenakshi@yugen.org.in", {
-                method: "POST",
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    showMessage();
-                    console.log(data.message)
-                })
-                .catch(error => console.log(error));
-
-
-        })
+        //     fetch("https://formsubmit.co/ajax/meenakshi@yugen.org.in", {
+        //         method: "POST",
+        //         body: formData
+        //     })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             showMessage();
+        //             console.log(data.message)
+        //         })
+        //         .catch(error => console.log(error));
 
 
-        nl.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const formData = new FormData(this)
-
-            fetch("https://formsubmit.co/ajax/meenakshi@yugen.org.in", {
-                method: "POST",
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    showMessage();
-                    console.log(data.message)
-                })
-                .catch(error => console.log(error));
+        // })
 
 
-        })
+        // nl.addEventListener('submit', function (e) {
+        //     e.preventDefault();
+        //     const formData = new FormData(this)
+
+        //     fetch("https://formsubmit.co/ajax/meenakshi@yugen.org.in", {
+        //         method: "POST",
+        //         body: formData
+        //     })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             showMessage();
+        //             console.log(data.message)
+        //         })
+        //         .catch(error => console.log(error));
+
+
+        // })
         // function showMessage() {
         //     document.getElementById('joinUs').classList.add('hidden')
         //     document.getElementById('message').classList.remove('hidden')

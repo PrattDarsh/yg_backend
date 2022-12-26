@@ -304,8 +304,9 @@
                                     you on board :)
                                 </p>
                             </div>
-                            <form class="flex items-center justify-center mt-12 space-x-4" id="joinUs">
-                                <input type="email" name="Email"
+                            <form action="/recruits" method="post" type="submit"
+                                class="flex items-center justify-center mt-12 space-x-4" id="joinUs">
+                                <input type="email" name="recMail"
                                     class="w-1/2  focus:outline-none border-2 border-green-500   bg-transparent text-green-500 text-center py-6 placeholder-green-500 px-4 rounded-full"
                                     placeholder="Email Address">
                                 <input type="hidden" name="Message" value="I want to be a part of Yugen!">
@@ -387,7 +388,7 @@
                             <div class="flex items-center justify-center">
                                 <form method="get" action="/books">
                                     <button class=" mt-12 text-white py-6 px-12 rounded-full bg-green-500">
-                                        We're getting the list ready!
+                                        Click here
                                     </button>
                                 </form>
                             </div>

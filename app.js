@@ -44,10 +44,15 @@ const subsSchema = new mongoose.Schema({
   mail: String,
 });
 
+const recruitSchema = new mongoose.Schema({
+  mail: String,
+});
+
 const Blog = new mongoose.model("blog", blogSchema);
 const Book = new mongoose.model("book", bookSchema);
 const user = new mongoose.model("user", userSchema);
 const Subs = new mongoose.model("subscriber", subsSchema);
+const recruit = new mongoose.model("recruit", recruitSchema);
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
@@ -116,6 +121,19 @@ app.post("/:page", (req, res) => {
         });
       }
     });
+  } else if (req.params.page == "recruits") {
+    const newRecruit = new recruit({
+      mail: req.body.recMail,
+    });
+
+    newRecruit.save((err) => {
+      if (!err) {
+        res.render("success", {
+          title: "",
+          message: "We will get back to you shortly!",
+        });
+      }
+    });
   } else {
     res.sendFile(__dirname + "/" + req.params.page + ".html");
   }
@@ -123,14 +141,21 @@ app.post("/:page", (req, res) => {
 
 app.get("/dashboard", (req, res) => {
   const user = app.get("user");
+
   Subs.find({}, (err, allSubs) => {
     if (err) {
       console.log(err);
     } else {
-      console.log(allSubs);
-      res.render("admin", {
-        user: user.username,
-        subs: allSubs,
+      recruit.find({}, (err, allRecruits) => {
+        if (err) {
+          console.log(err);
+        } else {
+          res.render("admin", {
+            user: user.username,
+            subs: allSubs,
+            recs: allRecruits,
+          });
+        }
       });
     }
   });

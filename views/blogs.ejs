@@ -120,8 +120,12 @@
                             <%=blogs[i].content%>
                         </p> -->
                     <form type="submit" method="post" action="/blogs/<%=blogs[i].title%>">
-                        <button>
-                            <p class="mt-6 underline text-pink-400">Read more</p>
+                        <button class="float-right mt-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 fill-current text-pink-500"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z" />
+                            </svg>
                         </button>
                     </form>
 

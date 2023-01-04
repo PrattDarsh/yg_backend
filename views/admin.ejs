@@ -45,16 +45,21 @@
 
             <div class=" text-white items-center justify-center md:flex" id="menu_items">
                 <div class="space-x-6 flex-wrap md:flex hidden text-gray-400">
-                    <a href="#add" class="hover:text-green-500 transition delay-45">
+                    <a href="#add" class="hover:text-white transition delay-45">
                         <p>Add new</p>
                     </a>
-                    <a href="#newsletter" class="hover:text-green-500 transition delay-45">
+                    <a href="#newsletter" class="hover:text-white transition delay-45">
                         <p>Newsletter</p>
                     </a>
-                    <a href="#recruits" class="hover:text-green-500 transition delay-45">
+                    <a href="#recruits" class="hover:text-white transition delay-45">
                         <p>Recruits</p>
                     </a>
-
+                    <a href="#donations" class="hover:text-white transition delay-45">
+                        <p>Donations</p>
+                    </a>
+                    <a href="#buyers" class="hover:text-white transition delay-45">
+                        <p>Buyers</p>
+                    </a>
                 </div>
                 <button class="hamburger md:hidden" onclick="newMenu()"><svg id="menu"
                         class="fill-current text-white h-8 md:h-10" clip-rule="evenodd" fill-rule="evenodd"
@@ -168,6 +173,101 @@
     </section>
 
 
+
+
+    <section class="mx-32 px-12 py-12 rounded-full " id="recruits">
+        <div class="flex justify-between">
+            <div class=" text-3xl md:text-4xl ">
+                <p> Potential <span class="font-bold italic">Recruits</span></p>
+                <div class="h-1 bg-indigo-500 w-32  my-12"></div>
+            </div>
+
+        </div>
+        <div class="grid md:grid-cols-4 gap-6">
+            <%for(var j=0;j< recs.length;j++){%>
+                <div class="curvedFull bg-gray-900 pt-12 transform ">
+                    <p class="px-6 text-xl mb-8">
+                        <%=recs[j].mail%>
+                    </p>
+                    <a class="text-indigo-500 " href="mailto:<%=recs[j].mail%>">
+                        <p class="text-white uppercase tracking-widest bg-indigo-500 text-center rounded-b-full py-4">
+                            Mail
+                        </p>
+                    </a>
+                </div>
+                <% } %>
+
+        </div>
+
+    </section>
+
+    <section class="mx-32 my-12 px-12 py-12 curvedFull border-2 border-blue-500" id="donations">
+        <div class="flex justify-center items-center">
+            <div class=""><img src="images/donation.svg" class="max-w-md" alt=""></div>
+            <div class="  ">
+                <p class="text-3xl md:text-4xl mb-12"> Donation <span class="font-bold italic">Tracker</span></p>
+
+                <a class="rounded-full  border-2 mx-auto px-6 py-4 border-blue-500 hover:bg-blue-500 transition delay-45"
+                    href="https://dashboard.razorpay.com/app/paymentpages/pl_KgD7pOsPTX8m6W/payments#paymentpages"
+                    target="_blank">Click Here</a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="mx-32 px-12 py-12 rounded-full buyers" id="buyers">
+        <div class="flex justify-center items-center">
+            <div class=" text-3xl md:text-4xl ">
+                <p> Book <span class="font-bold italic"> Buyers</span></p>
+                <div class="h-1 bg-pink-500 w-32 mx-auto  my-12"></div>
+            </div>
+
+        </div>
+        <section class=" mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-12 " id="">
+            <%for(var k=0;k< buyer.length;k++){%>
+                <div class="bg-gray-900 text-white px-16 text-pink-400 py-12 curvedFull left ">
+
+                    <p class="text-2xl  mt-12 ">
+                        <span class="font-bold">
+                            <%=buyer[k].name%>
+                        </span> <span class="text-gray-500 italic"> bought you</span>
+                    </p>
+                    <div class="flex mt-12">
+                        <form action="/dashboard/<%=buyer[k].book%>/<%=buyer[k].name%>" method="post">
+                            <button type="submit"
+                                class=" rounded-full border-2 border-pink-500 p-4 group hover:bg-pink-500 transition duration-100"><svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    class="h-8 fill-current text-pink-500 group-hover:text-white transition duration-100"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M0 11.386l1.17-1.206c1.951.522 5.313 1.731 8.33 3.597 3.175-4.177 9.582-9.398 13.456-11.777l1.044 1.073-14 18.927-10-10.614z" />
+                                </svg></button>
+                        </form>
+                        <a href="mailto:<%=buyer[k].mail%>"
+                            class="ml-4 rounded-full border-2 border-pink-500 p-4  group hover:bg-pink-500 transition duration-100"><svg
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor"
+                                class="w-8 h-8 text-pink-500 group-hover:text-white transition duration-100">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                            </svg></a>
+                    </div>
+
+                </div>
+                <div
+                    class="round right font-bold bg-pink-300 text-pink-600 flex items-center justify-center w-full text-4xl  curvedFull py-12">
+                    <div class="leading-loose">
+                        <%=buyer[k].book%>
+                    </div>
+                </div>
+                <% } %>
+        </section>
+
+    </section>
+
+
+
     <section class="mx-32 px-12 py-12 rounded-full " id="newsletter">
         <div class="flex justify-between">
             <div class=" text-3xl md:text-4xl ">
@@ -212,33 +312,6 @@
 
             <% } %>
     </section>
-
-    <section class="mx-32 px-12 py-12 rounded-full " id="recruits">
-        <div class="flex justify-between">
-            <div class=" text-3xl md:text-4xl ">
-                <p> Potential <span class="font-bold italic">Recruits</span></p>
-                <div class="h-1 bg-indigo-500 w-32  my-12"></div>
-            </div>
-
-        </div>
-        <div class="grid md:grid-cols-4 gap-6">
-            <%for(var j=0;j< recs.length;j++){%>
-                <div class="curvedFull bg-gray-900 pt-12 transform ">
-                    <p class="px-6 text-xl mb-8">
-                        <%=recs[j].mail%>
-                    </p>
-                    <a class="text-indigo-500 " href="mailto:<%=recs[j].mail%>">
-                        <p class="text-white uppercase tracking-widest bg-indigo-500 text-center rounded-b-full py-4">
-                            Mail
-                        </p>
-                    </a>
-                </div>
-                <% } %>
-
-        </div>
-
-    </section>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
     <script>
@@ -267,5 +340,40 @@
             document.getElementById('close').classList.toggle('hidden')
             document.getElementById('drawer').classList.toggle('hidden')
         }
+
+
+        // -----------------------------BOOK BUYERS---------------------
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+
+
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.buyers',
+                toggleActions: 'play none none pause',
+                scrub: 1,
+                start: 'top bottom'
+            }
+        }
+
+        )
+
+
+
+
+
+
+        if (!isMobile) {
+            tl.from('.left', { x: 200, stagger: 0.1, })
+                .from('.right', { x: -200, stagger: 0.1 }, '-=1')
+
+
+        } else {
+            tl.from('.left', { y: 200, stagger: 0.1, })
+                .from('.right', { y: -200, stagger: 0.1 }, '-=1')
+
+        }
+
+
     </script>
 </body>

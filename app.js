@@ -48,11 +48,18 @@ const recruitSchema = new mongoose.Schema({
   mail: String,
 });
 
+const buyersSchema = new mongoose.Schema({
+  name: String,
+  mail: String,
+  book: String,
+});
+
 const Blog = new mongoose.model("blog", blogSchema);
 const Book = new mongoose.model("book", bookSchema);
 const user = new mongoose.model("user", userSchema);
 const Subs = new mongoose.model("subscriber", subsSchema);
 const recruit = new mongoose.model("recruit", recruitSchema);
+const buyers = new mongoose.model("buyer", buyersSchema);
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
@@ -134,6 +141,21 @@ app.post("/:page", (req, res) => {
         });
       }
     });
+  } else if (req.params.page == "buyers") {
+    const newBuyer = new buyers({
+      name: req.body.Name,
+      mail: req.body.Mail,
+      book: req.body.book_name,
+    });
+    newBuyer.save((err) => {
+      if (!err) {
+        res.render("success", {
+          title: "",
+          message:
+            "Thank you for the donation. We will let you know when we receive the book!",
+        });
+      }
+    });
   } else {
     res.sendFile(__dirname + "/" + req.params.page + ".html");
   }
@@ -150,10 +172,38 @@ app.get("/dashboard", (req, res) => {
         if (err) {
           console.log(err);
         } else {
-          res.render("admin", {
-            user: user.username,
-            subs: allSubs,
-            recs: allRecruits,
+          buyers.find({}, (err, allBuyers) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log(allBuyers);
+              res.render("admin", {
+                user: user.username,
+                subs: allSubs,
+                recs: allRecruits,
+                buyer: allBuyers,
+              });
+            }
+          });
+        }
+      });
+    }
+  });
+});
+
+app.post("/dashboard/:book_name/:book_buyer", (req, res) => {
+  Book.deleteOne({ title: req.params.book_name }, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      buyers.deleteOne({ book: req.params.book_name }, (err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("deleted buyer");
+          res.render("success", {
+            title: req.body.title,
+            message: "The book has been removed from the list.",
           });
         }
       });

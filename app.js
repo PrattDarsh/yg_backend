@@ -35,7 +35,7 @@ const userSchema = new mongoose.Schema({
 const bookSchema = new mongoose.Schema({
   title: String,
   category: String,
-  age: Number,
+  age: String,
   link: String,
 });
 

@@ -61,23 +61,7 @@ const Subs = new mongoose.model("subscriber", subsSchema);
 const recruit = new mongoose.model("recruit", recruitSchema);
 const buyers = new mongoose.model("buyer", buyersSchema);
 
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-});
-
-app.post("/blogs", (req, res) => {
-  Blog.find({}, (err, allBlogs) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render("blogs", {
-        blogs: allBlogs,
-      });
-    }
-  });
-});
-
-app.post("/blogs/:title", (req, res) => {
+app.get("/blogs/:title", (req, res) => {
   Blog.findOne({ title: req.params.title }, (err, article) => {
     if (err) {
       console.log(err);
@@ -157,38 +141,61 @@ app.post("/:page", (req, res) => {
       }
     });
   } else {
-    res.sendFile(__dirname + "/" + req.params.page + ".html");
+    // res.sendFile(__dirname + "/" + req.params.page + ".html");
   }
 });
 
-app.get("/dashboard", (req, res) => {
-  const user = app.get("user");
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
 
-  Subs.find({}, (err, allSubs) => {
+app.get("/blogs", (req, res) => {
+  Blog.find({}, (err, allBlogs) => {
     if (err) {
       console.log(err);
     } else {
-      recruit.find({}, (err, allRecruits) => {
-        if (err) {
-          console.log(err);
-        } else {
-          buyers.find({}, (err, allBuyers) => {
-            if (err) {
-              console.log(err);
-            } else {
-              console.log(allBuyers);
-              res.render("admin", {
-                user: user.username,
-                subs: allSubs,
-                recs: allRecruits,
-                buyer: allBuyers,
-              });
-            }
-          });
-        }
+      res.render("blogs", {
+        blogs: allBlogs,
       });
     }
   });
+});
+
+app.get("/:slug", (req, res) => {
+  console.log(req.params.slug);
+  if (req.params.slug == "admin") {
+    res.sendFile(__dirname + "/login.html");
+  } else if (req.params.slug == "dashboard") {
+    const user = app.get("user");
+
+    Subs.find({}, (err, allSubs) => {
+      if (err) {
+        console.log(err);
+      } else {
+        recruit.find({}, (err, allRecruits) => {
+          if (err) {
+            console.log(err);
+          } else {
+            buyers.find({}, (err, allBuyers) => {
+              if (err) {
+                console.log(err);
+              } else {
+                console.log(allBuyers);
+                res.render("admin", {
+                  user: user.username,
+                  subs: allSubs,
+                  recs: allRecruits,
+                  buyer: allBuyers,
+                });
+              }
+            });
+          }
+        });
+      }
+    });
+  } else {
+    res.sendFile(__dirname + "/" + req.params.slug + ".html");
+  }
 });
 
 app.post("/dashboard/:book_name/:book_buyer", (req, res) => {
@@ -251,10 +258,6 @@ app.post("/dashboard/newbook", (req, res) => {
   });
 });
 
-app.get("/admin", (req, res) => {
-  res.sendFile(__dirname + "/login.html");
-});
-
 app.get("/books", (req, res) => {
   Book.find({}, (err, allBooks) => {
     if (err) {
@@ -266,8 +269,6 @@ app.get("/books", (req, res) => {
     }
   });
 });
-
-// app.get('/admin')
 
 app.listen(process.env.PORT || 3000, (req, res) => {
   console.log("Server Running");

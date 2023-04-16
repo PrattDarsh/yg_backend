@@ -193,6 +193,16 @@ app.get("/:slug", (req, res) => {
         });
       }
     });
+  } else if (req.params.slug == "books") {
+    Book.find({}, (err, allBooks) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.render("books", {
+          books: allBooks,
+        });
+      }
+    });
   } else {
     res.sendFile(__dirname + "/" + req.params.slug + ".html");
   }
@@ -254,18 +264,6 @@ app.post("/dashboard/newbook", (req, res) => {
       });
     } else {
       console.log(err);
-    }
-  });
-});
-
-app.get("/books", (req, res) => {
-  Book.find({}, (err, allBooks) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render("books", {
-        books: allBooks,
-      });
     }
   });
 });

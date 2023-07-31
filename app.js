@@ -37,6 +37,7 @@ const bookSchema = new mongoose.Schema({
   category: String,
   age: String,
   link: String,
+  price: Number,
 });
 
 const subsSchema = new mongoose.Schema({
@@ -51,7 +52,8 @@ const recruitSchema = new mongoose.Schema({
 const buyersSchema = new mongoose.Schema({
   name: String,
   mail: String,
-  book: String,
+  books: String,
+  total: String,
 });
 
 const Blog = new mongoose.model("blog", blogSchema);
@@ -125,19 +127,24 @@ app.post("/:page", (req, res) => {
         });
       }
     });
-  } else if (req.params.page == "buyers") {
+  } else if (req.params.page == "placeOrder") {
+    console.log(req.body);
     const newBuyer = new buyers({
-      name: req.body.Name,
-      mail: req.body.Mail,
-      book: req.body.book_name,
+      name: req.body.user,
+      mail: req.body.mail,
+      books: req.body.bookList,
+      total: req.body.total,
     });
     newBuyer.save((err) => {
       if (!err) {
-        res.render("success", {
-          title: "",
-          message:
-            "Thank you for the donation. We will let you know when we receive the book!",
-        });
+        res.redirect("https://rzp.io/l/AUhSpS2m3");
+        // res.render("success", {
+        //   title: "",
+        //   message:
+        //     "Thank you for the donation. We will let you know when we receive the book!",
+        // });
+      } else {
+        console.log(err);
       }
     });
   } else {

@@ -24,7 +24,7 @@
             <div class="">
                 <form action="/" method="get" type="submit">
                     <button>
-                        <img src="images/logo_white.png" class="h-16 md:h-18" id="yugen_white" alt=""></button>
+                        <img src="/images/logo_white.png" class="h-16 md:h-18" id="yugen_white" alt=""></button>
 
                 </form>
 
@@ -91,8 +91,8 @@
 
     <section id="all" class="">
 
-        <div class="grid md:grid-cols-4 ">
-            <div class="text-black font-b  md:col-span-1 text-right bg-green-300 px-6 py-32 sideBar">
+        <div class="flex ">
+            <!-- <div class="text-black font-b  md:col-span-1 text-right bg-green-300 px-6 py-32 sideBar">
                 <div class="text-7xl font-bold secHeading">Buy us<br> a book
                 </div>
                 <div class="text-xl mt-32 space-y-6">
@@ -124,46 +124,84 @@
                     </button>
                     <div class="w-full float-right h-px bg-green-400"></div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="md:col-span-3 grid md:grid-cols-3 grid-cols-2 gap-4 md:px-12  py-32">
-                <div class="bg-gray-900 curvedFull p-12 col-span-2  book">
-                    <p class="text-3xl secHeading "> Let us know when you've bought us something!</p>
-                    <form action="/buyers" method="post" class="mt-4">
-                        <div class="flex space-x-2">
-                            <input type="text" name="Name"
-                                class="w-1/2 bg-gray-800 rounded-full py-6 placeholder-gray-400  text-center"
-                                placeholder="Name">
-                            <input type="text" name="Mail"
-                                class="w-1/2 bg-gray-800 rounded-full py-6 placeholder-gray-400  text-center"
-                                placeholder="Mail">
+            <div class="max-w-6xl mx-auto md:px-12  py-32 space-y-2 ">
+                <div class="py-8">
+                    <p class="text-3xl font-bold ">Your<span class="text-green-600"> donations</span> </p>
+                    <div class="md:flex items-center justify-center" id="imgContainer">
+                        <img src="\images\empty_cart.svg" class="max-w-md mx-auto" alt="">
+                        <p class="text-gray-500 text-center md:text-left">Your cart is empty. Click<br> on books to add
+                            them to cart</p>
+                    </div>
+
+                    <form action="/placeOrder" method="post" class="space-y-2 px-6 mt-4 hidden" id="totalContainer">
+                        <input type="text" name="user" placeholder="Your name" required
+                            class="focus:outline-none w-full py-4 px-6  bg-gray-900 rounded-3xl  transition duration-100 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                        <input type="email" name="mail" placeholder="Your mail" required
+                            class="focus:outline-none w-full py-4 px-6  bg-gray-900 rounded-3xl transition duration-100 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                        <input type="hidden" value="" id="bookList" name="bookList">
+                        <div class="grid grid-cols-3 mt-4 space-x-4">
+                            <div id="items" class="col-span-2  rounded-3xl py-4">
+
+                            </div>
+                            <div
+                                class=" border-green-500 border-2 my-2 py-4 px-6  text-center rounded-3xl flex justify-center items-center">
+                                <div class="">
+                                    <p>Total</p>
+                                    <div class="mb-2">
+                                        <input id="total" name="total"
+                                            class="bg-transparent text-center w-full font-bold text-5xl ">
+
+                                    </div>
+                                    <div class="mb-4 ">
+                                        <button type="submit"
+                                            class="bg-green-500 py-2 px-6 text-black rounded-3xl mx-auto">Donate</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <input type="text" name="book_name"
-                            class="mt-4 text-center w-full bg-gray-800 rounded-full py-6" placeholder="Book Name">
-                        <button type="submit"
-                            class="mt-4 text-center w-full border-green-400 border-2 rounded-full py-6 hover:bg-green-400 transition delay-45">Submit</button>
                     </form>
+
+
                 </div>
-                <div class="bg-gray-900 curvedFull p-12  book ">
-                    <p class="text-3xl secHeading">Send the books to</p>
-                    <p class="text-gray-400 mt-6">Yugen Education Foundation<br>
-                        C-404, Meenakshi Mangalam,
-                        2nd Main Bannerghatta Road, Begur Hobli,
-                        Bengaluru, Karnataka - 560076</p>
+                <div class="grid grid-cols-4 py-4 px-6 text-center text-gray-600">
+                    <div class="">Name</div>
+                    <div class="">Author</div>
+                    <div class="">Age</div>
+                    <div class="">Price</div>
                 </div>
                 <%for(var i=0;i< books.length;i++){%>
-                    <a href="<%=books[i].link%>" target="_blank"
-                        class="book bg-gray-900 curvedFull p-12 <%=books[i].category%>">
-                        <div class=" border-gray-700  hover:bg-gray-900 p-4 transition delay-45">
-                            <p class="text-2xl secHeading">
-                                <%=books[i].title%>
-                            </p>
-                            <p class="text-green-500 mt-6">
-                                <%=books[i].age%>
-                                    <span class="ml">years</span>
-                            </p>
+
+                    <!-- <form class="book " type="submit" method="get" action="/books/<%=books[i].title%>"> -->
+                    <button target="_blank" id="<%=books[i].title%>"
+                        class="w-full bg-gray-900 rounded-3xl focus:bg-green-500 transition duration-100 ease-in-out transform hover:-translate-y-1 hover:scale-105  <%=books[i].category%>"
+                        onclick="chosenBook('<%=books[i].title%>','<%=books[i].price%>')">
+                        <div class="grid grid-cols-4 py-4 px-6">
+                            <div class="">
+                                <p class="text-xl secHeading">
+                                    <%=books[i].title%>
+                                </p>
+                            </div>
+                            <div class="">
+                                <p class="text-xl secHeading">
+                                    <%=books[i].author%>
+                                </p>
+                            </div>
+                            <div class="">
+                                <p class=" ">
+                                    <%=books[i].age%>
+                                        <span class="ml">years</span>
+                                </p>
+                            </div>
+                            <div class="">
+                                <p class="text-xl secHeading font-bold">
+                                    <%=books[i].price%>
+                                </p>
+                            </div>
                         </div>
-                    </a>
+                    </button>
+                    <!-- </form> -->
                     <% } %>
             </div>
         </div>
@@ -177,7 +215,7 @@
                 <div class="space-y-4">
                     <form action="/" method="get" class="flex justify-center" type="submit">
                         <button class="">
-                            <img src="images/logo.png" class="bg-white rounded-full p-2 h-16 md:h-24" id="yugen_white"
+                            <img src="/images/logo.png" class="bg-white rounded-full p-2 h-16 md:h-24" id="yugen_white"
                                 alt=""></button>
 
                     </form>
@@ -246,7 +284,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
     <script>
+        const chosenBooks = []
+        var total = 0
+        function chosenBook(bookName, bookPrice) {
+            document.getElementById(bookName).classList.add('bg-green-500')
+            document.getElementById('totalContainer').classList.remove('hidden')
+            document.getElementById('imgContainer').classList.remove('md:flex')
+            document.getElementById('imgContainer').classList.add('hidden')
+            if (!chosenBooks.includes(bookName)) {
+                total = total + parseInt(bookPrice)
+                chosenBooks.push(bookName)
+                const bookCard = document.createElement("div");
+                bookCard.className = "bg-gray-900 py-4 px-6 rounded-3xl my-2"
+                const bookTitle = document.createTextNode(bookName);
+                bookCard.appendChild(bookTitle);
+                document.getElementById('items').appendChild(bookCard)
 
+                // document.getElementById('items').innerHTML = chosenBooks
+                document.getElementById('total').value = '₹' + total
+                document.getElementById('bookList').value = chosenBooks
+
+            }
+
+        }
 
         gsap.from('.sideBar', { x: -20, opacity: 0 })
         gsap.from('.book', { x: 20, opacity: 0, stagger: 0.1 })

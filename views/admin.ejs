@@ -144,41 +144,53 @@
                             <p class="text-2xl text-center">Add <span class="font-bold italic">new
                                     book</span></p>
                             <div class="h-1 bg-pink-500 w-32 mt-6 mx-auto"></div>
-                            <form action="/dashboard/newbook" method="post" class="mt-4 space-y-6">
-                                <div class="">
-                                    <p class="text-lg ml-6">Book's Name</p>
-                                    <input type="text" name="bookName"
-                                        class="w-full bg-gray-900 rounded-3xl py-4 px-6 focus:outline-none mt-2">
-                                </div>
+                            <form action="/dashboard/newbook" method="post" class="mt-4 space-y-6 pt-12">
+                                <div class="grid grid-cols-2 gap-x-4 gap-y-6">
+                                    <div class="">
+                                        <p class="text-lg ml-6">Book's Name</p>
+                                        <input type="text" name="bookName"
+                                            class="w-full bg-gray-900 rounded-3xl py-4 px-6 focus:outline-none mt-2">
+                                    </div>
+                                    <div class="">
+                                        <p class="text-lg ml-6">Book's cover</p>
+                                        <input type="text" name="bookCover"
+                                            class="w-full bg-gray-900 rounded-3xl py-4 px-6 focus:outline-none mt-2">
+                                    </div>
+                                    <div class="">
+                                        <p class="text-lg ml-6">Book's Author</p>
+                                        <input type="text" name="bookAuthor"
+                                            class="w-full bg-gray-900 rounded-3xl py-4 px-6 focus:outline-none mt-2">
+                                    </div>
 
-
-                                <div class="">
-                                    <p class="text-lg ml-6">Category</p>
-                                    <select name="bookCategory"
-                                        class="w-full bg-gray-900 rounded-3xl py-4 px-6 focus:outline-none mt-2" id="">
-                                        <option value="friends">Making friends</option>
-                                        <option value="awareness">Self-awareness</option>
-                                        <option value="relationship">Relationship-building</option>
-                                        <option value="decision">Decision-Making</option>
-                                    </select>
-                                    <!-- <input type="text" name="bookCategory"
+                                    <div class="">
+                                        <p class="text-lg ml-6">Category</p>
+                                        <select name="bookCategory"
+                                            class="w-full bg-gray-900 rounded-3xl py-4 px-6 focus:outline-none mt-2"
+                                            id="">
+                                            <option value="friends">Making friends</option>
+                                            <option value="awareness">Self-awareness</option>
+                                            <option value="relationship">Relationship-building</option>
+                                            <option value="decision">Decision-Making</option>
+                                        </select>
+                                        <!-- <input type="text" name="bookCategory"
                                         class="w-full bg-gray-800 curvedFull py-6 px-6 focus:outline-none mt-2"> -->
-                                </div>
+                                    </div>
 
-                                <div class="">
-                                    <p class="text-lg ml-6">Age</p>
-                                    <input type="text" name="ageGap"
-                                        class="w-full bg-gray-900 rounded-3xl py-4 px-6 focus:outline-none mt-2">
-                                </div>
+                                    <div class="">
+                                        <p class="text-lg ml-6">Age</p>
+                                        <input type="text" name="ageGap"
+                                            class="w-full bg-gray-900 rounded-3xl py-4 px-6 focus:outline-none mt-2">
+                                    </div>
 
-                                <div class="">
-                                    <p class="text-lg ml-6">Link</p>
-                                    <input type="text" name="link"
-                                        class="w-full bg-gray-900 rounded-3xl py-4 px-6 focus:outline-none mt-2">
+                                    <div class="">
+                                        <p class="text-lg ml-6">Link</p>
+                                        <input type="text" name="link"
+                                            class="w-full bg-gray-900 rounded-3xl py-4 px-6 focus:outline-none mt-2">
+                                    </div>
                                 </div>
 
                                 <button
-                                    class="w-full border-2 border-pink-500 rounded-3xl py-4 text-lg transition duration-100 hover:bg-pink-500"
+                                    class="w-full border-2 mt-12 border-pink-500 rounded-3xl py-4 text-lg transition duration-100 hover:bg-pink-500"
                                     type="submit">Publish</button>
 
                             </form>

@@ -34,6 +34,8 @@ const userSchema = new mongoose.Schema({
 
 const bookSchema = new mongoose.Schema({
   title: String,
+  cover: String,
+  author: String,
   category: String,
   age: String,
   link: String,
@@ -261,6 +263,8 @@ app.post("/dashboard/newbook", (req, res) => {
     category: req.body.bookCategory,
     age: req.body.ageGap,
     link: req.body.link,
+    cover: req.body.bookCover,
+    author: req.body.bookAuthor,
   });
 
   newBook.save((err) => {
